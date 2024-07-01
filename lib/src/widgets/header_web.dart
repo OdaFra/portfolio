@@ -17,7 +17,6 @@ class HeaderWeb extends StatelessWidget {
       decoration: kHederDecoration,
       child: Row(
         children: [
-          const SizedBox(width: 50),
           Center(
             child: SiteLogo(
               onTap: () {},
@@ -38,7 +37,7 @@ class HeaderWeb extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
         ],
       ),
     );
