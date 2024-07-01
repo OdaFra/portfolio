@@ -1,14 +1,8 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
-import 'package:web_portfolio/src/widgets/header_mobile.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
-
-import '../constants/colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -42,6 +36,11 @@ class _HomePageState extends State<HomePage> {
                   scaffoldKey.currentState?.openEndDrawer();
                 },
               ),
+            //Presentation
+            if (constraints.maxWidth >= kMinDestopWith)
+              const MainDesktop()
+            else
+              const MainMobile(),
             //Skill
             Container(
               height: 500,
@@ -65,6 +64,7 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
+        floatingActionButton: const CustomFloatActionButton(),
       );
     });
   }
