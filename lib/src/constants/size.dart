@@ -1,4 +1,4 @@
-const double kMinDestopWith = 700.0;
+const double kMinDestopWith = 800.0;
 
 // extension kSize on MediaQueryData {
 //   bool get isMobile => size.width <= 700;
