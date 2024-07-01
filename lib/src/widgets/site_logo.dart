@@ -12,13 +12,33 @@ class SiteLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: const Text(
-        'Code With Oda',
-        style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
-          color: CustomColor.yellowPrimary,
-        ),
+      child: const Row(
+        children: [
+          Text(
+            '< ',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: CustomColor.whitePrimary,
+            ),
+          ),
+          Text(
+            'Oscar Ramirez',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: CustomColor.yellowPrimary,
+            ),
+          ),
+          Text(
+            ' />',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: CustomColor.whitePrimary,
+            ),
+          ),
+        ],
       ),
     );
   }
