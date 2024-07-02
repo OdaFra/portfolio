@@ -5,3 +5,4 @@ export 'main_desktop.dart';
 export 'main_mobile.dart';
 export 'mobile_drawer.dart';
 export 'site_logo.dart';
+export 'skill_desktop.dart';

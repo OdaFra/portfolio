@@ -1,5 +1,6 @@
 // ignore_for_file: sized_box_for_whitespace
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
@@ -15,6 +16,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final scaffoldKey = GlobalKey<ScaffoldState>();
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
 
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
@@ -43,9 +47,26 @@ class _HomePageState extends State<HomePage> {
               const MainMobile(),
             //Skill
             Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.blueGrey.shade700,
+              width: screenWidth,
+              padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+              color: CustomColor.bgLiht1,
+              child: const Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  //title
+                  AutoSizeText(
+                    'What I can do',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColor.whitePrimary,
+                    ),
+                  ),
+                  SizedBox(height: 50),
+                  //Platforms and Skill
+                  SkillDesktop()
+                ],
+              ),
             ),
             //Project
             Container(
