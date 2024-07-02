@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
@@ -31,7 +32,7 @@ class MobileDrawer extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
               ),
-              title: Text(navTitles[i]),
+              title: AutoSizeText(navTitles[i]),
               onTap: () {},
             )
         ],

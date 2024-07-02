@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
@@ -23,7 +24,7 @@ class MainDesktop extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
+              const AutoSizeText(
                 "Hi, \nI'm Oscar Ramirez\n A Software Engineer",
                 style: TextStyle(
                   color: CustomColor.witheSecondary,
@@ -41,7 +42,7 @@ class MainDesktop extends StatelessWidget {
                     backgroundColor: CustomColor.yellowPrimary,
                   ),
                   onPressed: () {},
-                  child: const Text(
+                  child: const AutoSizeText(
                     'Get in touch',
                     style: TextStyle(
                       color: CustomColor.whitePrimary,

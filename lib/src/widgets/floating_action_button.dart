@@ -24,7 +24,7 @@ class CustomFloatActionButton extends StatelessWidget {
           ),
           backgroundColor: CustomColor.yellowPrimary,
           onTap: onLanguageTap,
-          label: 'English',
+          label: 'Theme',
           labelStyle: const TextStyle(
               fontWeight: FontWeight.w500, color: CustomColor.scaffoldBg),
           labelBackgroundColor: CustomColor.whitePrimary,
@@ -36,7 +36,7 @@ class CustomFloatActionButton extends StatelessWidget {
           ),
           backgroundColor: CustomColor.yellowPrimary,
           onTap: onLanguageTap,
-          label: 'Theme',
+          label: 'English',
           labelStyle: const TextStyle(
               fontWeight: FontWeight.w500, color: CustomColor.scaffoldBg),
           labelBackgroundColor: CustomColor.whitePrimary,

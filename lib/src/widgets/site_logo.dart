@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
@@ -14,7 +15,7 @@ class SiteLogo extends StatelessWidget {
       onTap: onTap,
       child: const Row(
         children: [
-          Text(
+          AutoSizeText(
             '< ',
             style: TextStyle(
               fontSize: 22,
@@ -22,7 +23,7 @@ class SiteLogo extends StatelessWidget {
               color: CustomColor.whitePrimary,
             ),
           ),
-          Text(
+          AutoSizeText(
             'Oscar Ramirez',
             style: TextStyle(
               fontSize: 22,
@@ -30,7 +31,7 @@ class SiteLogo extends StatelessWidget {
               color: CustomColor.yellowPrimary,
             ),
           ),
-          Text(
+          AutoSizeText(
             ' />',
             style: TextStyle(
               fontSize: 22,

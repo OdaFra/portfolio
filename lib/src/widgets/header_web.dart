@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import 'package:web_portfolio/src/widgets/widgets.dart';
@@ -28,7 +29,7 @@ class HeaderWeb extends StatelessWidget {
               padding: const EdgeInsets.only(right: 20.0),
               child: TextButton(
                 onPressed: () {},
-                child: Text(
+                child: AutoSizeText(
                   navTitles[i],
                   style: const TextStyle(
                     fontSize: 16,

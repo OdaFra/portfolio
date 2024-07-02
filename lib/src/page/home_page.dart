@@ -64,7 +64,14 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
-        floatingActionButton: const CustomFloatActionButton(),
+        floatingActionButton: CustomFloatActionButton(
+          onLanguageTap: () {
+            print('Language');
+          },
+          onModoDarkTap: () {
+            print('Modo Dark');
+          },
+        ),
       );
     });
   }
