@@ -19,6 +19,7 @@ class MainMobile extends StatelessWidget {
         children: [
           SizedBox(height: (screenHeight * 0.15) / 2),
           CircleAvatar(
+            backgroundColor: Colors.transparent,
             radius: (screenWidth * 0.35) / 1.5,
             child: ShaderMask(
               shaderCallback: (bounds) {
@@ -30,7 +31,7 @@ class MainMobile extends StatelessWidget {
               blendMode: BlendMode.srcATop,
               child: ClipOval(
                 child: Image.asset(
-                  'assets/imgs/astrodev.jpg',
+                  'assets/imgs/perfilgithub.jpg',
                   width: screenWidth,
                 ),
               ),

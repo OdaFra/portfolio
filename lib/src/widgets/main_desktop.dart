@@ -55,10 +55,11 @@ class MainDesktop extends StatelessWidget {
             ],
           ),
           CircleAvatar(
+            backgroundColor: Colors.transparent,
             radius: (screenWidth * 0.26) / 2,
             child: ClipOval(
               child: Image.asset(
-                'assets/imgs/astrodev.jpg',
+                'assets/imgs/perfilgithub.jpg',
                 // width: (size.width * 0.5) / 2,
               ),
             ),
