@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import '../constants/constants.dart';
 
@@ -11,13 +12,14 @@ class MainMobile extends StatelessWidget {
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
     return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
       height: screenHeight,
       constraints: const BoxConstraints(minHeight: 560.0),
       child: Column(
         children: [
-          SizedBox(height: (screenHeight * 0.25) / 2),
+          SizedBox(height: (screenHeight * 0.15) / 2),
           CircleAvatar(
-            radius: (screenWidth * 0.40) / 1.5,
+            radius: (screenWidth * 0.35) / 1.5,
             child: ShaderMask(
               shaderCallback: (bounds) {
                 return LinearGradient(colors: [
@@ -35,30 +37,32 @@ class MainMobile extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 30),
-          const Text(
+          const AutoSizeText(
             "Hi, \nI'm Oscar Ramirez\n A Software Engineer",
             style: TextStyle(
               color: CustomColor.witheSecondary,
               fontWeight: FontWeight.bold,
-              fontSize: 30.0,
+              fontSize: 25.0,
               height: 1.5,
             ),
           ),
           const SizedBox(height: 15),
-          SizedBox(
-            width: 190,
-            height: 40,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: CustomColor.yellowPrimary,
-              ),
-              onPressed: () {},
-              child: const Text(
-                'Get in touch',
-                style: TextStyle(
-                  color: CustomColor.whitePrimary,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
+          Flexible(
+            child: SizedBox(
+              width: 180,
+              height: 50,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: CustomColor.yellowPrimary,
+                ),
+                onPressed: () {},
+                child: const AutoSizeText(
+                  'Get in touch',
+                  style: TextStyle(
+                    color: CustomColor.whitePrimary,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                  ),
                 ),
               ),
             ),
