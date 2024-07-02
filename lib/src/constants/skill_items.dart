@@ -1,31 +1,53 @@
-import 'package:flutter/material.dart';
-
 List<Map> platformItems = [
   {
-    "icon": const Icon(Icons.android),
+    "icon": 'platforms/android.png',
     "title": "Android Dev",
   },
   {
-    "icon": const Icon(Icons.apple),
+    "icon": 'platforms/web.png',
+    "title": "Web Dev",
+  },
+  {
+    "icon": 'platforms/ios.png',
     "title": "IOS Dev",
   },
   {
-    "icon": const Icon(Icons.computer),
-    "title": "Backend Dev",
+    "icon": 'platforms/desktop.png',
+    "title": "Desktop Dev",
   }
 ];
 
 const List<Map> skillItems = [
   {
-    "icon": Icon(Icons.flutter_dash),
+    "icon": 'imgs/Dart.png',
     "title": "Dart",
   },
   {
-    "icon": Icon(Icons.flutter_dash),
+    "icon": 'imgs/Flutter.png',
     "title": "Flutter",
   },
   {
-    "icon": Icon(Icons.computer),
-    "title": "Backend Dev",
+    "icon": 'imgs/typescript.png',
+    "title": "TypeScript",
+  },
+  {
+    "icon": 'imgs/Js.png',
+    "title": "JavaScript",
+  },
+  {
+    "icon": 'imgs/NodeJs.png',
+    "title": "Node Js",
+  },
+  {
+    "icon": 'imgs/Python.png',
+    "title": "Python",
+  },
+  {
+    "icon": 'imgs/Django.png',
+    "title": "Django",
+  },
+  {
+    "icon": 'imgs/Docker.png',
+    "title": "Docker",
   }
 ];
