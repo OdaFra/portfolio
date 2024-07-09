@@ -1,8 +1,10 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
+import 'package:web_portfolio/src/utils/project_utils.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,49 +32,106 @@ class _HomePageState extends State<HomePage> {
         body: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            //Main
-            if (constraints.maxWidth >= kMinDestopWith)
-              const HeaderWeb()
-            else
-              HeaderMobile(
-                onLogoTap: () {},
-                onMenuTap: () {
-                  scaffoldKey.currentState?.openEndDrawer();
-                },
-              ),
-            //Presentation
-            if (constraints.maxWidth >= kMinDestopWith)
-              const MainDesktop()
-            else
-              const MainMobile(),
-            //Skill
+            // //Main
+            // if (constraints.maxWidth >= kMinDestopWith)
+            //   const HeaderWeb()
+            // else
+            //   HeaderMobile(
+            //     onLogoTap: () {},
+            //     onMenuTap: () {
+            //       scaffoldKey.currentState?.openEndDrawer();
+            //     },
+            //   ),
+            // //Presentation
+            // if (constraints.maxWidth >= kMinDestopWith)
+            //   const MainDesktop()
+            // else
+            //   const MainMobile(),
+            // //Skill
+            // Container(
+            //   width: screenWidth,
+            //   padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+            //   color: CustomColor.bgLiht1,
+            //   child: Column(
+            //     mainAxisSize: MainAxisSize.min,
+            //     children: [
+            //       //title
+            //       const AutoSizeText(
+            //         'What I can do',
+            //         style: TextStyle(
+            //           fontSize: 24,
+            //           fontWeight: FontWeight.bold,
+            //           color: CustomColor.whitePrimary,
+            //         ),
+            //       ),
+            //       const SizedBox(height: 50),
+            //       //Platforms and Skill
+            //       if (constraints.maxWidth >= kMedDestopWith)
+            //         const SkillDesktop()
+            //       else
+            //         const SkillMobile()
+            //     ],
+            //   ),
+            // ),
+
+            //Work Project
             Container(
               width: screenWidth,
               padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-              color: CustomColor.bgLiht1,
-              child: const Column(
-                mainAxisSize: MainAxisSize.min,
+              child: Column(
                 children: [
-                  //title
-                  AutoSizeText(
-                    'What I can do',
+                  //Work Project title
+                  const AutoSizeText(
+                    'Work projects',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: CustomColor.whitePrimary,
                     ),
                   ),
-                  SizedBox(height: 50),
-                  //Platforms and Skill
-                  SkillDesktop()
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Wrap(
+                    spacing: 25,
+                    runSpacing: 25,
+                    children: [
+                      for (int i = 0; i < workProjectUtils.length; i++)
+                        ProjectsCardWidget(
+                          project: workProjectUtils[i],
+                        ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  //Hobby Project
+                  const AutoSizeText(
+                    'Hobby projects',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColor.whitePrimary,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Wrap(
+                    spacing: 25,
+                    runSpacing: 25,
+                    children: [
+                      for (int i = 0; i < hobbyProjectUtils.length; i++)
+                        ProjectsCardWidget(
+                          project: hobbyProjectUtils[i],
+                        ),
+                    ],
+                  ),
                 ],
               ),
             ),
-            //Project
-            Container(
-              height: 500,
-              width: double.maxFinite,
-            ), //Contact
+
+            //Contact
             Container(
               height: 500,
               width: double.maxFinite,
