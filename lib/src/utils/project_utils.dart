@@ -24,6 +24,8 @@ List<ProjectUtils> workProjectUtils = [
     subtitle: 'Tigo Money',
     androidLink:
         'https://play.google.com/store/apps/details?id=com.juvo.tigomoney&pcampaignid=web_share',
+    iosLink:
+        'https://apps.apple.com/py/app/billetera-tigo-money-paraguay/id1589504689',
   ),
   ProjectUtils(
     image: 'assets/projects/tm_ejemplo.png',
