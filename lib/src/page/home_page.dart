@@ -1,9 +1,9 @@
 // ignore_for_file: sized_box_for_whitespace
 
-
 import 'package:flutter/material.dart';
 
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/widgets.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
 
@@ -22,83 +22,131 @@ class _HomePageState extends State<HomePage> {
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
 
-    return LayoutBuilder(builder: (context, constraints) {
-      return Scaffold(
-        key: scaffoldKey,
-        endDrawer: constraints.maxWidth >= kMinDestopWith
-            ? null
-            : const MobileDrawer(),
-        backgroundColor: CustomColor.scaffoldBg,
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
-            //Main
-            if (constraints.maxWidth >= kMinDestopWith)
-              const HeaderWeb()
-            else
-              HeaderMobile(
-                onLogoTap: () {},
-                onMenuTap: () {
-                  scaffoldKey.currentState?.openEndDrawer();
-                },
-              ),
-            //Presentation
-            if (constraints.maxWidth >= kMinDestopWith)
-              const MainDesktop()
-            else
-              const MainMobile(),
-            //Skill
-            Container(
-              width: screenWidth,
-              padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-              color: CustomColor.bgLiht1,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  // title
-                  const AutoSizeText(
-                    'What I can do',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: CustomColor.whitePrimary,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Scaffold(
+          key: scaffoldKey,
+          endDrawer: constraints.maxWidth >= kMinDestopWith
+              ? null
+              : const MobileDrawer(),
+          backgroundColor: CustomColor.scaffoldBg,
+          body: ListView(
+            scrollDirection: Axis.vertical,
+            children: [
+              //Main
+              if (constraints.maxWidth >= kMinDestopWith)
+                const HeaderWeb()
+              else
+                HeaderMobile(
+                  onLogoTap: () {},
+                  onMenuTap: () {
+                    scaffoldKey.currentState?.openEndDrawer();
+                  },
+                ),
+              //Presentation
+              if (constraints.maxWidth >= kMinDestopWith)
+                const MainDesktop()
+              else
+                const MainMobile(),
+              //Skill
+              Container(
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.bgLiht1,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // title
+                    const AutoSizeText(
+                      'What I can do',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: CustomColor.whitePrimary,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 50),
-                  //Platforms and Skill
-                  if (constraints.maxWidth >= kMedDestopWith)
-                    const SkillDesktop()
-                  else
-                    const SkillMobile()
-                ],
+                    const SizedBox(height: 50),
+                    //Platforms and Skill
+                    if (constraints.maxWidth >= kMedDestopWith)
+                      const SkillDesktop()
+                    else
+                      const SkillMobile()
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 30),
-            // PROJECT
-            ProjectSection(screenWidth: screenWidth),
+              const SizedBox(height: 30),
+              // PROJECT
+              ProjectSection(screenWidth: screenWidth),
 
-            //Contact
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.blueGrey.shade700,
-            ),
-            //Footer
-            Container(
-              height: 500,
-              width: double.maxFinite,
-            )
-          ],
-        ),
-        floatingActionButton: CustomFloatActionButton(
-          onLanguageTap: () {
-            print('Language');
-          },
-          onModoDarkTap: () {
-            print('Modo Dark');
-          },
-        ),
-      );
-    });
+              //Contact
+              Container(
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: CustomColor.bgLiht1,
+                child: Column(
+                  children: [
+                    //Title
+                    const AutoSizeText(
+                      'Get in touch',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                        color: CustomColor.whitePrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 50),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: TextField(
+                            style: const TextStyle(
+                              color: CustomColor.scaffoldBg,
+                            ),
+                            decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.all(16),
+                                filled: true,
+                                fillColor: CustomColor.witheSecondary,
+                                focusedBorder: getInputBorder,
+                                enabledBorder: getInputBorder,
+                                border: getInputBorder,
+                                hintText: 'Your name',
+                                hintStyle: const TextStyle(
+                                  color: CustomColor.hintDark,
+                                )),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              //Footer
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                width: double.maxFinite,
+                alignment: Alignment.center,
+                child: const AutoSizeText(
+                  'Made by Oscar Ramirez with flutter 3.19',
+                ),
+              )
+            ],
+          ),
+          floatingActionButton: CustomFloatActionButton(
+            onLanguageTap: () {
+              print('Language');
+            },
+            onModoDarkTap: () {
+              print('Modo Dark');
+            },
+          ),
+        );
+      },
+    );
+  }
+
+  OutlineInputBorder get getInputBorder {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide.none,
+    );
   }
 }
