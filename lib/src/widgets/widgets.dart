@@ -1,7 +1,9 @@
+export 'contact_section.dart';
 export 'custom_textfield.dart';
 export 'floating_action_button.dart';
+export 'footer_section.dart';
 export 'header_mobile.dart';
-export 'header_web.dart';
+export 'header_Desktop.dart';
 export 'main_desktop.dart';
 export 'main_mobile.dart';
 export 'mobile_drawer.dart';
