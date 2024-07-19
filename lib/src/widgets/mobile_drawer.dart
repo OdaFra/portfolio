@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import '../constants/constants.dart';
 
 class MobileDrawer extends StatelessWidget {
-  const MobileDrawer({super.key});
+  const MobileDrawer({super.key, required this.onNavItemTap});
+  final Function(int) onNavItemTap;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,9 @@ class MobileDrawer extends StatelessWidget {
                 fontSize: 16,
               ),
               title: AutoSizeText(navTitles[i]),
-              onTap: () {},
+              onTap: () {
+                onNavItemTap(i);
+              },
             )
         ],
       ),

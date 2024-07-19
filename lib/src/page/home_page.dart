@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/widgets.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
 
@@ -15,12 +14,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final scrollController = ScrollController();
+  final List<GlobalKey> navbarKeys = List.generate(
+    4,
+    (index) => GlobalKey(),
+  );
+
   @override
   Widget build(BuildContext context) {
-    final scaffoldKey = GlobalKey<ScaffoldState>();
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
-    final screenHeight = screenSize.height;
+    // final screenHeight = screenSize.height;
 
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -28,111 +33,75 @@ class _HomePageState extends State<HomePage> {
           key: scaffoldKey,
           endDrawer: constraints.maxWidth >= kMinDestopWith
               ? null
-              : const MobileDrawer(),
-          backgroundColor: CustomColor.scaffoldBg,
-          body: ListView(
-            scrollDirection: Axis.vertical,
-            children: [
-              //Main
-              if (constraints.maxWidth >= kMinDestopWith)
-                const HeaderWeb()
-              else
-                HeaderMobile(
-                  onLogoTap: () {},
-                  onMenuTap: () {
-                    scaffoldKey.currentState?.openEndDrawer();
+              : MobileDrawer(
+                  onNavItemTap: (int navIndex) {
+                    scaffoldKey.currentState?.closeEndDrawer();
+                    scrollToSection(navIndex);
                   },
                 ),
-              //Presentation
-              if (constraints.maxWidth >= kMinDestopWith)
-                const MainDesktop()
-              else
-                const MainMobile(),
-              //Skill
-              Container(
-                width: screenWidth,
-                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                color: CustomColor.bgLiht1,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // title
-                    const AutoSizeText(
-                      'What I can do',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColor.whitePrimary,
-                      ),
-                    ),
-                    const SizedBox(height: 50),
-                    //Platforms and Skill
-                    if (constraints.maxWidth >= kMedDestopWith)
-                      const SkillDesktop()
-                    else
-                      const SkillMobile()
-                  ],
-                ),
-              ),
-              const SizedBox(height: 30),
-              // PROJECT
-              ProjectSection(screenWidth: screenWidth),
-
-              //Contact
-              Container(
-                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                color: CustomColor.bgLiht1,
-                child: Column(
-                  children: [
-                    //Title
-                    const AutoSizeText(
-                      'Get in touch',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                        color: CustomColor.whitePrimary,
-                      ),
-                    ),
-                    const SizedBox(height: 50),
-                    const Row(
-                      children: [
-                        //Name
-                        Flexible(
-                          child: CustomTextField(
-                            hintText: 'Your name',
-                          ),
+          backgroundColor: CustomColor.scaffoldBg,
+          body: SingleChildScrollView(
+            controller: scrollController,
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: [
+                SizedBox(key: navbarKeys.first),
+                //Main
+                if (constraints.maxWidth >= kMinDestopWith)
+                  HeaderDeskrop(
+                    onNavMenuTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    },
+                  )
+                else
+                  HeaderMobile(
+                    onLogoTap: () {},
+                    onMenuTap: () {
+                      scaffoldKey.currentState?.openEndDrawer();
+                    },
+                  ),
+                //Presentation
+                if (constraints.maxWidth >= kMinDestopWith)
+                  const MainDesktop()
+                else
+                  const MainMobile(),
+                //Skill
+                Container(
+                  key: navbarKeys[1],
+                  width: screenWidth,
+                  padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                  color: CustomColor.bgLiht1,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // title
+                      const AutoSizeText(
+                        'What I can do',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: CustomColor.whitePrimary,
                         ),
-                        SizedBox(width: 15),
-                        //Email
-                        Flexible(
-                          child: CustomTextField(
-                            hintText: 'Your emial',
-                          ),
-                        )
-                      ],
-                    ),
-                    const SizedBox(height: 15),
-                    //Message
-                    const CustomTextField(
-                      hintText: 'Your message',
-                      maxLine: 10,
-                    ),
-                    //Send Button
-                    ElevatedButton(
-                        onPressed: () {}, child: const Text('Get in touch'))
-                  ],
+                      ),
+                      const SizedBox(height: 50),
+                      //Platforms and Skill
+                      if (constraints.maxWidth >= kMedDestopWith)
+                        const SkillDesktop()
+                      else
+                        const SkillMobile()
+                    ],
+                  ),
                 ),
-              ),
-              //Footer
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                width: double.maxFinite,
-                alignment: Alignment.center,
-                child: const AutoSizeText(
-                  'Made by Oscar Ramirez with flutter 3.22',
-                ),
-              )
-            ],
+                const SizedBox(height: 30),
+                // PROJECT
+                ProjectSection(screenWidth: screenWidth, key: navbarKeys[2]),
+
+                //Contact
+                ContactSection(key: navbarKeys[3]),
+                //Footer
+                const FooterSection(),
+              ],
+            ),
           ),
           floatingActionButton: CustomFloatActionButton(
             onLanguageTap: () {
@@ -144,6 +113,19 @@ class _HomePageState extends State<HomePage> {
           ),
         );
       },
+    );
+  }
+
+  void scrollToSection(int navIndex) {
+    if (navIndex == 4) {
+      //open experience section
+      return;
+    }
+    final key = navbarKeys[navIndex];
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }
