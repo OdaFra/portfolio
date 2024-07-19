@@ -11,7 +11,8 @@ class ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return //Work Project
+    //Work Project
+    return 
         Container(
       width: screenWidth,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
