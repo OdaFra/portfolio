@@ -94,28 +94,32 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SizedBox(height: 50),
-                    Row(
+                    const Row(
                       children: [
+                        //Name
                         Flexible(
-                          child: TextField(
-                            style: const TextStyle(
-                              color: CustomColor.scaffoldBg,
-                            ),
-                            decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.all(16),
-                                filled: true,
-                                fillColor: CustomColor.witheSecondary,
-                                focusedBorder: getInputBorder,
-                                enabledBorder: getInputBorder,
-                                border: getInputBorder,
-                                hintText: 'Your name',
-                                hintStyle: const TextStyle(
-                                  color: CustomColor.hintDark,
-                                )),
+                          child: CustomTextField(
+                            hintText: 'Your name',
+                          ),
+                        ),
+                        SizedBox(width: 15),
+                        //Email
+                        Flexible(
+                          child: CustomTextField(
+                            hintText: 'Your emial',
                           ),
                         )
                       ],
-                    )
+                    ),
+                    const SizedBox(height: 15),
+                    //Message
+                    const CustomTextField(
+                      hintText: 'Your message',
+                      maxLine: 10,
+                    ),
+                    //Send Button
+                    ElevatedButton(
+                        onPressed: () {}, child: const Text('Get in touch'))
                   ],
                 ),
               ),
@@ -125,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                 width: double.maxFinite,
                 alignment: Alignment.center,
                 child: const AutoSizeText(
-                  'Made by Oscar Ramirez with flutter 3.19',
+                  'Made by Oscar Ramirez with flutter 3.22',
                 ),
               )
             ],
@@ -140,13 +144,6 @@ class _HomePageState extends State<HomePage> {
           ),
         );
       },
-    );
-  }
-
-  OutlineInputBorder get getInputBorder {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide.none,
     );
   }
 }
