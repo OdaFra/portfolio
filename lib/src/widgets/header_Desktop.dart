@@ -1,10 +1,10 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:web_portfolio/src/widgets/widgets.dart';
 
 import '../constants/constants.dart';
-import '../styles/styles.dart';
+import '../themes/themes.dart';
 
 class HeaderDeskrop extends StatelessWidget {
   const HeaderDeskrop({super.key, required this.onNavMenuTap});

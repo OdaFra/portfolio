@@ -1,7 +1,7 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
-import '../constants/constants.dart';
+import '../themes/themes.dart';
 import '../utils/project_utils.dart';
 import 'widgets.dart';
 
@@ -12,8 +12,7 @@ class ProjectSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Work Project
-    return 
-        Container(
+    return Container(
       width: screenWidth,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
       child: Column(

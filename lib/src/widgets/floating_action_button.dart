@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:web_portfolio/src/constants/colors.dart';
+import 'package:web_portfolio/src/themes/colors.dart';
 
 class CustomFloatActionButton extends StatelessWidget {
   const CustomFloatActionButton(
       {super.key, this.onLanguageTap, this.onModoDarkTap});
   final VoidCallback? onLanguageTap;
-  final VoidCallback? onModoDarkTap;
+  final Function()? onModoDarkTap;
 
   @override
   Widget build(BuildContext context) {

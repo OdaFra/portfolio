@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../styles/styles.dart';
+import '../themes/themes.dart';
 import 'widgets.dart';
 
 class HeaderMobile extends StatelessWidget {

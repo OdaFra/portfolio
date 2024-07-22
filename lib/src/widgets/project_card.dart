@@ -1,9 +1,10 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:web_portfolio/src/utils/project_utils.dart';
 
-import '../constants/constants.dart';
 import 'dart:js' as js;
+
+import '../themes/themes.dart';
 
 class ProjectsCardWidget extends StatelessWidget {
   const ProjectsCardWidget({

@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
+import '../themes/themes.dart';
 
 class MobileDrawer extends StatelessWidget {
   const MobileDrawer({super.key, required this.onNavItemTap});
