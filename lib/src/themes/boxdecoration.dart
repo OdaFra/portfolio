@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/constants.dart';
+import 'themes.dart';
 
 BoxDecoration kHederDecoration = BoxDecoration(
   gradient: const LinearGradient(
