@@ -12,6 +12,7 @@ class CustomFloatActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SpeedDial(
+      
       animatedIcon: AnimatedIcons.menu_close,
       animatedIconTheme: const IconThemeData(size: 25.0),
       backgroundColor: CustomColor.yellowPrimary,
@@ -24,7 +25,7 @@ class CustomFloatActionButton extends StatelessWidget {
             color: CustomColor.whitePrimary,
           ),
           backgroundColor: CustomColor.yellowPrimary,
-          onTap: onLanguageTap,
+          onTap: onModoDarkTap,
           label: 'Theme',
           labelStyle: const TextStyle(
               fontWeight: FontWeight.w500, color: CustomColor.scaffoldBg),

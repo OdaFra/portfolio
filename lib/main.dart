@@ -17,10 +17,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider = context.watch<ThemeProvider>();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: themeProvider.theme,
+      theme: Provider.of<ThemeProvider>(context).themeData,
       title: 'Code With Oda - Portfolio',
       home: const HomePage(),
     );
