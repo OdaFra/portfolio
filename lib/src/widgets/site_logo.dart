@@ -6,40 +6,43 @@ import '../themes/themes.dart';
 class SiteLogo extends StatelessWidget {
   const SiteLogo({
     super.key,
-    this.onTap,
+    this.onPressed,
   });
-  final VoidCallback? onTap;
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: const Row(
-        children: [
-          AutoSizeText(
-            '< ',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
+    return Padding(
+      padding: const EdgeInsets.only(left: 30.0),
+      child: TextButton(
+        onPressed: onPressed,
+        child: const Row(
+          children: [
+            AutoSizeText(
+              '< ',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: CustomColor.whitePrimary,
+              ),
             ),
-          ),
-          AutoSizeText(
-            'Oscar Ramirez',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: CustomColor.yellowPrimary,
+            AutoSizeText(
+              'Oscar Ramirez',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: CustomColor.yellowPrimary,
+              ),
             ),
-          ),
-          AutoSizeText(
-            ' />',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
+            AutoSizeText(
+              ' />',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: CustomColor.whitePrimary,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

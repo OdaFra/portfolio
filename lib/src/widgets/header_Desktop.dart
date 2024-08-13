@@ -21,7 +21,7 @@ class HeaderDeskrop extends StatelessWidget {
         children: [
           Center(
             child: SiteLogo(
-              onTap: () {},
+              onPressed: () {},
             ),
           ),
           const Spacer(),
