@@ -14,13 +14,13 @@ class MainMobile extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
       height: screenHeight,
-      constraints: const BoxConstraints(minHeight: 560.0),
+      constraints: const BoxConstraints(minHeight: 460.0),
       child: Column(
         children: [
           SizedBox(height: (screenHeight * 0.15) / 2),
           CircleAvatar(
-            backgroundColor: Colors.transparent,
-            radius: (screenWidth * 0.35) / 1.5,
+            backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
+            radius: (screenWidth * 0.30) / 1.6,
             child: ShaderMask(
               shaderCallback: (bounds) {
                 return LinearGradient(colors: [
@@ -43,7 +43,7 @@ class MainMobile extends StatelessWidget {
             style: TextStyle(
               color: CustomColor.witheSecondary,
               fontWeight: FontWeight.bold,
-              fontSize: 25.0,
+              fontSize: 20.0,
               height: 1.5,
             ),
           ),
