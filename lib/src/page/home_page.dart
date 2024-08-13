@@ -7,14 +7,14 @@ import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
 import '../themes/themes.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePage1 extends StatefulWidget {
+  const HomePage1({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage1> createState() => _HomePage1State();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePage1State extends State<HomePage1> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
   final List<GlobalKey> navbarKeys = List.generate(
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.vertical,
             child: Column(
               children: [
-                SizedBox(key: navbarKeys.first),
+                SizedBox(key: navbarKeys[0]),
                 //Main
                 if (constraints.maxWidth >= isMobileSize)
                   HeaderDeskrop(
@@ -131,10 +131,10 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          floatingActionButton: CustomFloatActionButton(
-            onLanguageTap: () {},
-            onModoDarkTap: () {},
-          ),
+          // floatingActionButton: CustomFloatActionButton(
+          //   onLanguageTap: () {},
+          //   onModoDarkTap: () {},
+          // ),
         );
       },
     );
