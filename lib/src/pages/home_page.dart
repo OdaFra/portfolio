@@ -6,6 +6,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
 import '../themes/themes.dart';
+import '../widgets/desktop/desktop.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -31,6 +32,24 @@ class _HomePageState extends State<HomePage> {
       builder: (context, constraints) {
         return Scaffold(
           key: scaffoldKey,
+          appBar: (constraints.maxWidth >= isMobileSize)
+              ? PreferredSize(
+                  preferredSize: const Size.fromHeight(55.0),
+                  child: HeaderDestkopAppBar(
+                    onNavMenuTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    },
+                  ),
+                )
+              : PreferredSize(
+                  preferredSize: const Size.fromHeight(55.0),
+                  child: HeaderMobile(
+                    onLogoTap: () {},
+                    onMenuTap: () {
+                      scaffoldKey.currentState?.openEndDrawer();
+                    },
+                  ),
+                ),
           endDrawer: constraints.maxWidth >= isMobileSize
               ? null
               : MobileDrawer(
@@ -46,20 +65,20 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 SizedBox(key: navbarKeys.first),
-                //Main
-                if (constraints.maxWidth >= isMobileSize)
-                  HeaderDeskrop(
-                    onNavMenuTap: (int navIndex) {
-                      scrollToSection(navIndex);
-                    },
-                  )
-                else
-                  HeaderMobile(
-                    onLogoTap: () {},
-                    onMenuTap: () {
-                      scaffoldKey.currentState?.openEndDrawer();
-                    },
-                  ),
+                // //Main
+                // if (constraints.maxWidth >= isMobileSize)
+                //   HeaderDeskrop(
+                //     onNavMenuTap: (int navIndex) {
+                //       scrollToSection(navIndex);
+                //     },
+                //   )
+                // else
+                //   HeaderMobile(
+                //     onLogoTap: () {},
+                //     onMenuTap: () {
+                //       scaffoldKey.currentState?.openEndDrawer();
+                //     },
+                //   ),
                 //Presentation
                 if (constraints.maxWidth >= isMobileSize)
                   const MainDesktop()
