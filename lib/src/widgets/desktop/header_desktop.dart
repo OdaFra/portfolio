@@ -7,8 +7,10 @@ import '../widgets.dart';
 
 class HeaderDestkopAppBar extends StatelessWidget
     implements PreferredSizeWidget {
-  const HeaderDestkopAppBar({super.key, required this.onNavMenuTap});
+  const HeaderDestkopAppBar(
+      {super.key, required this.onNavMenuTap, this.onPressed});
   final Function(int) onNavMenuTap;
+  final VoidCallback? onPressed;
 
   @override
   final Size preferredSize = const Size.fromHeight(55.0);
@@ -40,10 +42,17 @@ class HeaderDestkopAppBar extends StatelessWidget
         IconButton(
           onPressed: () {},
           icon: const Icon(
+            Icons.mail_outline,
+          ),
+        ),
+        const SizedBox(width: 5),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
             Icons.language_rounded,
           ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 5),
         IconButton(
           onPressed: () {},
           icon: const Icon(
@@ -62,7 +71,7 @@ class HeaderDestkopAppBar extends StatelessWidget
           children: [
             Center(
               child: SiteLogo(
-                onPressed: () {},
+                onPressed: onPressed,
               ),
             ),
             const Spacer(),
@@ -71,7 +80,7 @@ class HeaderDestkopAppBar extends StatelessWidget
                 padding: const EdgeInsets.only(right: 15.0),
                 child: TextButton(
                   onPressed: () {
-                    // onNavMenuTap(i);
+                    onNavMenuTap(i);
                   },
                   child: AutoSizeText(
                     navTitles[i],
