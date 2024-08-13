@@ -28,26 +28,26 @@ class ContactSection extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 50),
-            ConstrainedBox(
-                constraints: const BoxConstraints(
-                    maxWidth: kMedDestopWith, maxHeight: 120),
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    if (constraints.maxWidth <= kMinDestopWith) {
-                      return buildNameEmailFieldMobile();
-                    }
-                    return buildNameEmailFieldDesktop();
-                  },
-                )),
+            // ConstrainedBox(
+            //     constraints: const BoxConstraints(
+            //         maxWidth: isDesktopSize, maxHeight: 120),
+            //     child: LayoutBuilder(
+            //       builder: (context, constraints) {
+            //         if (constraints.maxWidth <= isMobileSize) {
+            //           return buildNameEmailFieldMobile();
+            //         }
+            //         return buildNameEmailFieldDesktop();
+            //       },
+            //     )),
             const SizedBox(height: 15),
             //Message
-            ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: kMedDestopWith),
-              child: const CustomTextField(
-                hintText: 'Message',
-                maxLine: 10,
-              ),
-            ),
+            // ConstrainedBox(
+            //   constraints: const BoxConstraints(maxWidth: isDesktopSize),
+            //   child: const CustomTextField(
+            //     hintText: 'Message',
+            //     maxLine: 10,
+            //   ),
+            // ),
             const SizedBox(height: 15),
             //Send Button
             ConstrainedBox(
