@@ -18,6 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
+  final GlobalKey sizedBoxKey = GlobalKey();
   final List<GlobalKey> navbarKeys = List.generate(
     5,
     (index) => GlobalKey(),
@@ -36,6 +37,7 @@ class _HomePageState extends State<HomePage> {
               ? PreferredSize(
                   preferredSize: const Size.fromHeight(55.0),
                   child: HeaderDestkopAppBar(
+                    onPressed: () => scrollBackToHome(sizedBoxKey),
                     onNavMenuTap: (int navIndex) {
                       scrollToSection(navIndex);
                     },
@@ -64,21 +66,7 @@ class _HomePageState extends State<HomePage> {
             scrollDirection: Axis.vertical,
             child: Column(
               children: [
-                SizedBox(key: navbarKeys.first),
-                // //Main
-                // if (constraints.maxWidth >= isMobileSize)
-                //   HeaderDeskrop(
-                //     onNavMenuTap: (int navIndex) {
-                //       scrollToSection(navIndex);
-                //     },
-                //   )
-                // else
-                //   HeaderMobile(
-                //     onLogoTap: () {},
-                //     onMenuTap: () {
-                //       scaffoldKey.currentState?.openEndDrawer();
-                //     },
-                //   ),
+                SizedBox(key: sizedBoxKey),
                 //Presentation
                 if (constraints.maxWidth >= isMobileSize)
                   const MainDesktop()
@@ -86,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                   const MainMobile(),
                 //Skill
                 Container(
-                  key: navbarKeys[1],
+                  key: navbarKeys[0],
                   width: screenWidth,
                   padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                   color: CustomColor.bgLiht1,
@@ -114,7 +102,7 @@ class _HomePageState extends State<HomePage> {
 
                 //Exprience
                 Container(
-                  key: navbarKeys[2],
+                  key: navbarKeys[1],
                   width: screenWidth,
                   padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                   color: CustomColor.bgLiht1,
@@ -141,18 +129,17 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(height: 30),
                 // PROJECT
-                ProjectSection(screenWidth: screenWidth, key: navbarKeys[3]),
+                ProjectSection(screenWidth: screenWidth, key: navbarKeys[2]),
 
                 //Contact
-                ContactSection(key: navbarKeys[4]),
+                ContactSection(key: navbarKeys[3]),
                 //Footer
                 const FooterSection(),
               ],
             ),
           ),
           floatingActionButton: CustomFloatActionButton(
-            onLanguageTap: () {},
-            onModoDarkTap: () {},
+            onPress: () => scrollBackToHome(sizedBoxKey),
           ),
         );
       },
@@ -160,14 +147,22 @@ class _HomePageState extends State<HomePage> {
   }
 
   void scrollToSection(int navIndex) {
-    // if (navIndex == 4) {
-    //   return;
-    // }
     final key = navbarKeys[navIndex];
     Scrollable.ensureVisible(
       key.currentContext!,
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
+  }
+
+  void scrollBackToHome(GlobalKey key) {
+    final context = key.currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 }
