@@ -55,8 +55,8 @@ class _HomePage1State extends State<HomePage1> {
                   )
                 else
                   HeaderMobile(
-                    onLogoTap: () {},
-                    onMenuTap: () {
+                    onNavTitleTap: () {},
+                    onNavMenuTap: () {
                       scaffoldKey.currentState?.openEndDrawer();
                     },
                   ),

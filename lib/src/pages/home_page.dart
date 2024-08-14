@@ -37,19 +37,16 @@ class _HomePageState extends State<HomePage> {
               ? PreferredSize(
                   preferredSize: const Size.fromHeight(55.0),
                   child: HeaderDestkopAppBar(
-                    onPressed: () => scrollBackToHome(sizedBoxKey),
-                    onNavMenuTap: (int navIndex) {
-                      scrollToSection(navIndex);
-                    },
+                    onNavTitleTap: () => scrollBackToHome(sizedBoxKey),
+                    onNavMenuTap: (int navIndex) => scrollToSection(navIndex),
                   ),
                 )
               : PreferredSize(
                   preferredSize: const Size.fromHeight(55.0),
                   child: HeaderMobile(
-                    onLogoTap: () {},
-                    onMenuTap: () {
-                      scaffoldKey.currentState?.openEndDrawer();
-                    },
+                    onNavTitleTap: () => scrollBackToHome(sizedBoxKey),
+                    onNavMenuTap: () =>
+                        scaffoldKey.currentState?.openEndDrawer(),
                   ),
                 ),
           endDrawer: constraints.maxWidth >= isMobileSize
