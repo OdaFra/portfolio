@@ -40,7 +40,7 @@ class MobileDrawer extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
                     ),
-                    title: AutoSizeText(
+                    title: AutoSizeText(  
                       navTitles[index],
                     ),
                     onTap: () {
