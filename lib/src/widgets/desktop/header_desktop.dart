@@ -8,9 +8,9 @@ import '../widgets.dart';
 class HeaderDestkopAppBar extends StatelessWidget
     implements PreferredSizeWidget {
   const HeaderDestkopAppBar(
-      {super.key, required this.onNavMenuTap, this.onPressed});
+      {super.key, required this.onNavMenuTap, this.onNavTitleTap});
   final Function(int) onNavMenuTap;
-  final VoidCallback? onPressed;
+  final VoidCallback? onNavTitleTap;
 
   @override
   final Size preferredSize = const Size.fromHeight(55.0);
@@ -71,7 +71,7 @@ class HeaderDestkopAppBar extends StatelessWidget
           children: [
             Center(
               child: SiteLogo(
-                onPressed: onPressed,
+                onPressed: onNavTitleTap,
               ),
             ),
             const Spacer(),

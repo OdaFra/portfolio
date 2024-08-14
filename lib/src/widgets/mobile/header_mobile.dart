@@ -4,9 +4,9 @@ import '../../themes/themes.dart';
 import '../widgets.dart';
 
 class HeaderMobile extends StatelessWidget implements PreferredSizeWidget {
-  const HeaderMobile({super.key, this.onLogoTap, this.onMenuTap});
-  final VoidCallback? onLogoTap;
-  final VoidCallback? onMenuTap;
+  const HeaderMobile({super.key, this.onNavTitleTap, this.onNavMenuTap});
+  final VoidCallback? onNavTitleTap;
+  final VoidCallback? onNavMenuTap;
 
   @override
   final Size preferredSize = const Size.fromHeight(55.0);
@@ -20,11 +20,11 @@ class HeaderMobile extends StatelessWidget implements PreferredSizeWidget {
       child: Row(
         children: [
           SiteLogo(
-            onPressed: onLogoTap,
+            onPressed: onNavTitleTap,
           ),
           const Spacer(),
           IconButton(
-            onPressed: onMenuTap,
+            onPressed: onNavMenuTap,
             icon: const Icon(Icons.menu),
           ),
           const SizedBox(width: 15),
