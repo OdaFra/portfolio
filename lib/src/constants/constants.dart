@@ -1,4 +1,4 @@
-
+export 'contacts_items.dart';
 export 'nav_items.dart';
 export 'size.dart';
 export 'skill_items.dart';
