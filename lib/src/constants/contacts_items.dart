@@ -1,14 +1,12 @@
 List<Map> contactsItems = [
   {
     "icon": 'assets/contacts/linkedin.png',
-    "title": "Linkedin",
+    "title": "LinkedIn",
+    "contact": 'https://www.linkedin.com/in/oscar-ramirez-franco/'
   },
   {
     "icon": 'assets/contacts/github.png',
     "title": "GitHub",
-  },
-  {
-    "icon": 'assets/contact/email.png',
-    "title": "osramirezf@gmail.com",
+    "contact": 'https://github.com/OdaFra'
   },
 ];
