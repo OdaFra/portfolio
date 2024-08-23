@@ -21,6 +21,7 @@ class CustomButtonContacts extends StatelessWidget {
         children: [
           for (int i = 0; i < contactsItems.length; i++)
             InkWell(
+              mouseCursor: SystemMouseCursors.click,
               onTap: () {
                 js.context.callMethod('open', [contactsItems[i]['contact']]);
               },
