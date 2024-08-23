@@ -20,32 +20,35 @@ class CustomButtonContacts extends StatelessWidget {
         direction: Axis.horizontal,
         children: [
           for (int i = 0; i < contactsItems.length; i++)
-            InkWell(
-              mouseCursor: SystemMouseCursors.click,
+            GestureDetector(
               onTap: () {
                 js.context.callMethod('open', [contactsItems[i]['contact']]);
               },
-              child: Container(
-                alignment: Alignment.center,
-                width: 150,
-                decoration: BoxDecoration(
-                  color: CustomColor.yellowPrimary,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 14.0),
-                  leading: Image.asset(
-                    contactsItems[i]['icon'],
-                    color: CustomColor.scaffoldBg,
-                    width: 22.0,
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: Container(
+                  alignment: Alignment.center,
+                  width: 150,
+                  decoration: BoxDecoration(
+                    color: CustomColor.yellowPrimary,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  title: Center(
-                    child: AutoSizeText(
-                      contactsItems[i]['title'],
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: CustomColor.scaffoldBg,
+                  child: ListTile(
+                    contentPadding:
+                        const EdgeInsets.symmetric(horizontal: 14.0),
+                    leading: Image.asset(
+                      contactsItems[i]['icon'],
+                      color: CustomColor.scaffoldBg,
+                      width: 22.0,
+                    ),
+                    title: Center(
+                      child: AutoSizeText(
+                        contactsItems[i]['title'],
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          color: CustomColor.scaffoldBg,
+                        ),
                       ),
                     ),
                   ),
