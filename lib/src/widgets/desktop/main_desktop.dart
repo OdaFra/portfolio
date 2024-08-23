@@ -52,7 +52,7 @@ class MainDesktop extends StatelessWidget {
                     ),
                     SizedBox(height: 20),
                     AutoSizeText(
-                      "+3 años de experiencia como desarrollador, obteniendo un sólido conocimiento técnico y conceptual del ciclo de vida de desarrollo de software, como la implementación de arquitectura limpia",
+                      "+3 años de experiencia como desarrollador, obteniendo un sólido conocimiento técnico y conceptual del ciclo de vida de desarrollo de software, como la implementación de arquitectura limpia.",
                       style: TextStyle(
                         color: CustomColor.textFieldBg,
                         fontWeight: FontWeight.bold,
@@ -60,6 +60,20 @@ class MainDesktop extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 25),
+                    AutoSizeText(
+                      "Contáctame",
+                      style: TextStyle(
+                        color: CustomColor.whitePrimary,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14.0,
+                        height: 1.5,
+                        letterSpacing: 3,
+                      ),
+                    ),
+                    Divider(
+                      color: CustomColor.grey4Color,
+                    ),
+                    SizedBox(height: 10),
                     CustomButtonContacts(),
                   ],
                 ),
