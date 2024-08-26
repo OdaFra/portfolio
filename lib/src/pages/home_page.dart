@@ -1,12 +1,9 @@
-// ignore_for_file: sized_box_for_whitespace
-
 import 'package:flutter/material.dart';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
 import '../themes/themes.dart';
-import '../widgets/desktop/desktop.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -70,31 +67,10 @@ class _HomePageState extends State<HomePage> {
                 else
                   const MainMobile(),
                 //Skill
-                Container(
-                  key: navbarKeys[0],
-                  width: screenWidth,
-                  padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                  color: CustomColor.bgLiht1,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      // title
-                      const AutoSizeText(
-                        'Professional Skills',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: CustomColor.whitePrimary,
-                        ),
-                      ),
-                      const SizedBox(height: 50),
-                      //Platforms and Skill
-                      if (constraints.maxWidth >= isDesktopSize)
-                        const SkillDesktop()
-                      else
-                        const SkillMobile()
-                    ],
-                  ),
+                ProfessionalSkills(
+                  navbarKeys: navbarKeys,
+                  screenWidth: screenWidth,
+                  constraints: constraints,
                 ),
 
                 //Exprience
