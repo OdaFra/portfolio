@@ -88,7 +88,7 @@ class ContactSection extends StatelessWidget {
                     js.context.callMethod('open', [SnsLinks.github]);
                   },
                   child: Image.asset(
-                    'assets/projects/github.png',
+                    'assets/contacts/github.png',
                     width: 24,
                     color: CustomColor.whitePrimary,
                   ),
@@ -98,7 +98,7 @@ class ContactSection extends StatelessWidget {
                     js.context.callMethod('open', [SnsLinks.linkedin]);
                   },
                   child: Image.asset(
-                    'assets/projects/linkedin.png',
+                    'assets/contacts/linkedin.png',
                     width: 24,
                     color: CustomColor.whitePrimary,
                   ),
