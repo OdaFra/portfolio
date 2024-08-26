@@ -40,7 +40,7 @@ class MobileDrawer extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
                     ),
-                    title: AutoSizeText(  
+                    title: AutoSizeText(
                       navTitles[index],
                     ),
                     onTap: () {
@@ -49,21 +49,6 @@ class MobileDrawer extends StatelessWidget {
                   );
                 }),
           ),
-          // With For - Example
-          // for (int i = 0; i < navIcons.length; i++)
-          //   ListTile(
-          //     contentPadding: const EdgeInsets.symmetric(horizontal: 30.0),
-          //     leading: Icon(navIcons[i]),
-          //     titleTextStyle: const TextStyle(
-          //       color: CustomColor.whitePrimary,
-          //       fontWeight: FontWeight.w600,
-          //       fontSize: 16,
-          //     ),
-          //     title: AutoSizeText(navTitles[i]),
-          //     onTap: () {
-          //       onNavItemTap(i);
-          //     },
-          //   )
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
