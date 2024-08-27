@@ -42,12 +42,81 @@ const List<Map> frameworkItems = [
     "title": "Flutter",
   },
   {
-    "icon": 'imgs/NodeJs.png',
-    "title": "Node Js",
+    "icon": 'imgs/expressjs.png',
+    "title": "Express Js",
   },
   {
     "icon": 'imgs/Django.png',
     "title": "Django",
+  },
+];
+
+const List<Map> toolsItems = [
+  {
+    "icon": 'imgs/nodeJs.png',
+    "title": "Node.Js",
+  },
+  {
+    "icon": 'imgs/npm.png',
+    "title": "NPM",
+  },
+  {
+    "icon": 'imgs/docker.png',
+    "title": "Docker",
+  },
+  {
+    "icon": 'imgs/aws.png',
+    "title": "AWS",
+  },
+  {
+    "icon": 'imgs/firebase.png',
+    "title": "Firebase",
+  },
+  {
+    "icon": 'imgs/git.png',
+    "title": "Git",
+  },
+  {
+    "icon": 'imgs/github.png',
+    "title": "GitHub",
+  },
+  {
+    "icon": 'imgs/postman.png',
+    "title": "Postman",
+  },
+  {
+    "icon": 'imgs/vscode.png',
+    "title": "Vscode",
+  }
+];
+
+const List<Map> databaseItems = [
+  {
+    "icon": 'imgs/postgresql.png',
+    "title": "PostgreSQL",
+  },
+  {
+    "icon": 'imgs/oracle.png',
+    "title": "Oracle",
+  },
+  {
+    "icon": 'imgs/mongodb.png',
+    "title": "MongoDB",
+  },
+];
+
+const List<Map> osItems = [
+  {
+    "icon": 'imgs/macos.png',
+    "title": "MacOs",
+  },
+  {
+    "icon": 'imgs/linux.png',
+    "title": "Linux",
+  },
+  {
+    "icon": 'imgs/windows.png',
+    "title": "Windows",
   },
 ];
 
