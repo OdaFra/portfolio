@@ -1,30 +1,26 @@
 List<Map> platformItems = [
   {
     "icon": 'platforms/android.png',
-    "title": "Android Dev",
-  },
-  {
-    "icon": 'platforms/web.png',
-    "title": "Web Dev",
+    "title": "Android",
   },
   {
     "icon": 'platforms/ios.png',
-    "title": "IOS Dev",
+    "title": "IOS",
+  },
+  {
+    "icon": 'platforms/web.png',
+    "title": "Web",
   },
   {
     "icon": 'platforms/desktop.png',
-    "title": "Desktop Dev",
+    "title": "Desktop",
   }
 ];
 
-const List<Map> skillItems = [
+const List<Map> programingLanguages = [
   {
     "icon": 'imgs/Dart.png',
     "title": "Dart",
-  },
-  {
-    "icon": 'imgs/Flutter.png',
-    "title": "Flutter",
   },
   {
     "icon": 'imgs/typescript.png',
@@ -35,12 +31,34 @@ const List<Map> skillItems = [
     "title": "JavaScript",
   },
   {
+    "icon": 'imgs/Python.png',
+    "title": "Python",
+  },
+];
+
+const List<Map> frameworkItems = [
+  {
+    "icon": 'imgs/Flutter.png',
+    "title": "Flutter",
+  },
+  {
     "icon": 'imgs/NodeJs.png',
     "title": "Node Js",
   },
   {
-    "icon": 'imgs/Python.png',
-    "title": "Python",
+    "icon": 'imgs/Django.png',
+    "title": "Django",
+  },
+];
+
+const List<Map> skillItems = [
+  {
+    "icon": 'imgs/Flutter.png',
+    "title": "Flutter",
+  },
+  {
+    "icon": 'imgs/NodeJs.png',
+    "title": "Node Js",
   },
   {
     "icon": 'imgs/Django.png',
