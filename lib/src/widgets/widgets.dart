@@ -1,14 +1,10 @@
 export 'contact_section.dart';
 export 'custom_button_contact.dart';
+export 'custom_skills_items.dart';
 export 'custom_textfield.dart';
-export 'desktop/desktop.dart';
-export 'desktop/header_desktop.dart';
-export 'desktop/main_desktop.dart';
 export 'floating_action_button.dart';
 export 'footer_section.dart';
 export 'header_desktop.dart';
-export 'mobile/header_mobile.dart';
-export 'mobile/main_mobile.dart';
 export 'mobile_drawer.dart';
 export 'presentation_am.dart';
 export 'professional_skill.dart';

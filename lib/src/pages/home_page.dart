@@ -4,6 +4,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
 import '../themes/themes.dart';
+import 'desktop/desktop.dart';
+import 'desktop/main_desktop.dart';
+import 'mobile/header_mobile.dart';
+import 'mobile/main_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

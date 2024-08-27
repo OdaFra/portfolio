@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/themes/themes.dart';
 
 import 'widgets.dart';
@@ -26,6 +27,7 @@ class ProfessionalSkills extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          const SizedBox(height: 30),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -41,16 +43,23 @@ class ProfessionalSkills extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 50),
-          if (constraints.maxWidth >= 300)
-            const Column(
-              children: [
-                CustomsSkillsItems(),
-                SizedBox(height: 10),
-              ],
-            ) //SkillDesktop()
-          // else
-          //   const SkillMobile()
+          const SizedBox(height: 40),
+          CustomsSkillsItems(
+            title: 'Plataformas',
+            skillList: platformItems,
+            iconColor: CustomColor.whitePrimary,
+          ),
+          const SizedBox(height: 10),
+          const CustomsSkillsItems(
+            title: 'Lenguajes',
+            skillList: programingLanguages,
+          ),
+          const SizedBox(height: 10),
+          const CustomsSkillsItems(
+            title: 'Librerias',
+            skillList: frameworkItems,
+          ),
+          const SizedBox(height: 10),
         ],
       ),
     );
