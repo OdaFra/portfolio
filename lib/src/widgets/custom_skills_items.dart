@@ -8,7 +8,8 @@ class CustomsSkillsItems extends StatelessWidget {
     super.key,
     required this.title,
     required this.skillList,
-    this.i = 0, this.iconColor,
+    this.i = 0,
+    this.iconColor,
   });
 
   final String title;
@@ -19,7 +20,7 @@ class CustomsSkillsItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 750),
+      constraints: const BoxConstraints(maxWidth: 800),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: ExpansionTile(
@@ -51,11 +52,11 @@ class CustomsSkillsItems extends StatelessWidget {
                       Chip(
                         backgroundColor: CustomColor.bgLiht2,
                         padding: const EdgeInsets.symmetric(
-                            vertical: 12.0, horizontal: 16.0),
-                        avatar: Image.asset(
+                            vertical: 10.0, horizontal: 10.0),
+                        avatar:   Image.asset(
                           skillList[i]['icon'],
-                          color:iconColor,
-                          width: 26.0,
+                          color: iconColor,
+                          width: 40.0,
                         ),
                         label: AutoSizeText(skillList[i]['title']),
                       ),

@@ -60,6 +60,21 @@ class ProfessionalSkills extends StatelessWidget {
             skillList: frameworkItems,
           ),
           const SizedBox(height: 10),
+          const CustomsSkillsItems(
+            title: 'Herramientas',
+            skillList: toolsItems,
+          ),
+          const SizedBox(height: 10),
+          const CustomsSkillsItems(
+            title: 'Bases de datos',
+            skillList: databaseItems,
+          ),
+          const SizedBox(height: 10),
+          const CustomsSkillsItems(
+            title: 'Sistemas Operativos',
+            skillList: osItems,
+          ),
+          const SizedBox(height: 10),
         ],
       ),
     );
