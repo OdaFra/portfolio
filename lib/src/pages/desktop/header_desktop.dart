@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../constants/constants.dart';
 import '../../themes/themes.dart';
-import '../widgets.dart';
+import '../../widgets/widgets.dart';
 
 class HeaderDestkopAppBar extends StatelessWidget
     implements PreferredSizeWidget {

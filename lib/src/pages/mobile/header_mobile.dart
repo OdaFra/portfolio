@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../themes/themes.dart';
-import '../widgets.dart';
+import '../../widgets/widgets.dart';
 
 class HeaderMobile extends StatelessWidget implements PreferredSizeWidget {
   const HeaderMobile({super.key, this.onNavTitleTap, this.onNavMenuTap});
