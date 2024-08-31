@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
 import '../themes/themes.dart';
@@ -65,11 +64,13 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 SizedBox(key: sizedBoxKey),
+
                 //Presentation
                 if (constraints.maxWidth >= isMobileSize)
                   const MainDesktop()
                 else
                   const MainMobile(),
+
                 //Skill
                 ProfessionalSkills(
                   navbarKeys: navbarKeys,
@@ -78,32 +79,12 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 //Exprience
-                Container(
-                  key: navbarKeys[1],
-                  width: screenWidth,
-                  padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                  color: CustomColor.bgLiht1,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      // title
-                      const AutoSizeText(
-                        'Resumen',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: CustomColor.whitePrimary,
-                        ),
-                      ),
-                      const SizedBox(height: 50),
-                      //Platforms and Skill
-                      if (constraints.maxWidth >= isDesktopSize)
-                        const SkillDesktop()
-                      else
-                        const SkillMobile()
-                    ],
-                  ),
+                WorkExperience(
+                  navbarKeys: navbarKeys,
+                  screenWidth: screenWidth,
+                  constraints: constraints,
                 ),
+
                 const SizedBox(height: 30),
                 // PROJECT
                 ProjectSection(screenWidth: screenWidth, key: navbarKeys[2]),
