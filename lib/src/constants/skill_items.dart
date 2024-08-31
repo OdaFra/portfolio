@@ -108,7 +108,7 @@ const List<Map> databaseItems = [
 const List<Map> osItems = [
   {
     "icon": 'imgs/macos.png',
-    "title": "MacOs",
+    "title": "MacOS",
   },
   {
     "icon": 'imgs/linux.png',

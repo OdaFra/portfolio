@@ -13,3 +13,4 @@ export 'project_section.dart';
 export 'site_logo.dart';
 export 'skill_desktop.dart';
 export 'skill_mobile.dart';
+export 'work_experience.dart';
