@@ -39,7 +39,7 @@ class CustomPresentationAM extends StatelessWidget {
         const SizedBox(height: 20),
         AutoSizeText(
           textAlign: maxWidth <= 350 ? TextAlign.center : TextAlign.start,
-          "+3 años de experiencia como desarrollador, obteniendo un sólido conocimiento técnico y conceptual del ciclo de vida de desarrollo de software, como la implementación de arquitectura limpia.",
+          "+4 años de experiencia. Ingeniero en Informático de Asuncion, Paraguay 🇵🇾. Especializado en el desarrollo de aplicaciones móviles como el Back-End obteniendo un sólido conocimiento técnico y conceptual del ciclo de vida de desarrollo de software, como la implementación de arquitectura limpia.",
           style: TextStyle(
             color: CustomColor.textFieldBg,
             fontWeight: FontWeight.bold,
