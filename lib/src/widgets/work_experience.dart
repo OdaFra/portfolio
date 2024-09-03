@@ -28,7 +28,7 @@ class WorkExperience extends StatelessWidget {
         children: [
           // title
           const AutoSizeText(
-            'Resumen',
+            'Experiencia',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -37,10 +37,8 @@ class WorkExperience extends StatelessWidget {
           ),
           const SizedBox(height: 50),
 
-          if (constraints.maxWidth >= isDesktopSize)
-            const SkillDesktop()
-          else
-            const SkillMobile()
+         // if (constraints.maxWidth >= isDesktopSize) const SkillDesktop()
+         CustomsWorkExperience( workExperiencelList: workExperienceItems)
         ],
       ),
     );
