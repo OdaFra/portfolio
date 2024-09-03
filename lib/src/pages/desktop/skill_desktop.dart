@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:web_portfolio/src/themes/colors.dart';
 
-import '../constants/constants.dart';
-import '../themes/themes.dart';
+import '../../constants/constants.dart';
+import '../../themes/themes.dart';
 
 class SkillDesktop extends StatelessWidget {
   const SkillDesktop({
