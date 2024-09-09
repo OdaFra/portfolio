@@ -19,37 +19,68 @@ class CustomsWorkExperience extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 800),
-      child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Column(
-            children: [
-              LayoutBuilder(
-                builder: (context, constraints) {
-                  return Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    direction: constraints.maxWidth > 300
-                        ? Axis.horizontal
-                        : Axis.vertical,
-                    alignment: WrapAlignment.center,
-                    children: [
-                      for (int i = 0; i < workExperiencelList.length; i++)
-                        Chip(
-                          backgroundColor: CustomColor.bgLiht2,
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 10.0),
-                          avatar:
-                              AutoSizeText(workExperiencelList[i]['company']),
-                          label:
-                              AutoSizeText(workExperiencelList[i]['position']),
-                        ),
-                    ],
-                  );
-                },
-              ),
-              const SizedBox(height: 20)
-            ],
-          )),
+      child: Column(
+        children: [
+          ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: workExperiencelList.length,
+            itemBuilder: (context, index) {
+              final item = workExperiencelList[index];
+              return Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: CustomColor.bgLiht1,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AutoSizeText(
+                      item['position'],
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    AutoSizeText(
+                      item['company'],
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    AutoSizeText(
+                      item['year'],
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    AutoSizeText(
+                      item['ubication'],
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    AutoSizeText(
+                      item['description'],
+                      style: const TextStyle(
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }
