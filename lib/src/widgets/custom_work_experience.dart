@@ -27,6 +27,8 @@ class CustomsWorkExperience extends StatelessWidget {
             itemCount: workExperiencelList.length,
             itemBuilder: (context, index) {
               final item = workExperiencelList[index];
+              final skillMap = item['skill'] as Map<String, String>?;
+
               return Container(
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 padding: const EdgeInsets.all(15),
@@ -74,6 +76,28 @@ class CustomsWorkExperience extends StatelessWidget {
                         fontSize: 14,
                       ),
                     ),
+                    const SizedBox(height: 30),
+                    (skillMap != null && skillMap.isNotEmpty)
+                        ? Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: skillMap.entries.map((skill) {
+                              return Chip(
+                                backgroundColor: CustomColor.bgLiht2,
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 10.0,
+                                  horizontal: 10.0,
+                                ),
+                                avatar: Image.asset(
+                                  skill.value,
+                                  color: iconColor,
+                                  width: 40.0,
+                                ),
+                                label: AutoSizeText(skill.key),
+                              );
+                            }).toList(),
+                          )
+                        : const SizedBox()
                   ],
                 ),
               );
