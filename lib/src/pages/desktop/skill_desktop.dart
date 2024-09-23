@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:web_portfolio/src/themes/colors.dart';
 
 import '../../constants/constants.dart';
@@ -55,13 +54,13 @@ class SkillDesktop extends StatelessWidget {
               spacing: 8,
               runSpacing: 8,
               children: [
-                for (int i = 0; i < skillItems.length; i++)
+                for (int i = 0; i < programingLanguages.length; i++)
                   Chip(
                       backgroundColor: CustomColor.bgLiht2,
                       padding: const EdgeInsets.symmetric(
                           vertical: 12.0, horizontal: 16.0),
-                      avatar: Image.asset(skillItems[i]['icon']),
-                      label: AutoSizeText(skillItems[i]['title']))
+                      avatar: Image.asset(programingLanguages[i]['icon']),
+                      label: AutoSizeText(programingLanguages[i]['title']))
               ],
             ),
           ),
@@ -70,4 +69,3 @@ class SkillDesktop extends StatelessWidget {
     );
   }
 }
-

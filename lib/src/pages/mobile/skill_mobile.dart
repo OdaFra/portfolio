@@ -43,13 +43,13 @@ class SkillMobile extends StatelessWidget {
             runSpacing: 8,
             alignment: WrapAlignment.center,
             children: [
-              for (int i = 0; i < skillItems.length; i++)
+              for (int i = 0; i < programingLanguages.length; i++)
                 Chip(
                     backgroundColor: CustomColor.bgLiht2,
                     padding: const EdgeInsets.symmetric(
                         vertical: 12.0, horizontal: 16.0),
-                    avatar: Image.asset(skillItems[i]['icon']),
-                    label: AutoSizeText(skillItems[i]['title']))
+                    avatar: Image.asset(programingLanguages[i]['icon']),
+                    label: AutoSizeText(programingLanguages[i]['title']))
             ],
           ),
           //Skill

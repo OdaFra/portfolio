@@ -5,7 +5,18 @@ List<Map> workExperienceItems = [
     "year": "Abr. 2024 - Actualidad",
     "ubication": 'En remoto - Paraguay',
     "description":
-        'Actualmente contribuyó en el desarrollo de la App de Tigo Money, la cual se encuentra disponible en los siguientes paises: Paraguay, Bolivia, Honduras, Guatemala y El Salvador. Aplicando los principios de Clean Architecture para mantener una estructura de código limpio, modular y fácil de mantener.'
+        'Actualmente contribuyó en el desarrollo de la App de Tigo Money, la cual se encuentra disponible en los siguientes paises: Paraguay, Bolivia, Honduras, Guatemala y El Salvador. Aplicando los principios de Clean Architecture para mantener una estructura de código limpio, modular y fácil de mantener.',
+    'skill': {
+      "dart": 'imgs/languages/Dart.png',
+      "flutter": 'imgs/framework/Flutter.png',
+      "python": 'imgs/languages/Python.png',
+      "docker": 'imgs/tools/docker.png',
+      "aws": 'imgs/tools/aws.png',
+      "git": 'imgs/tools/git.png',
+      "github": 'imgs/tools/github.png',
+      "postman": 'imgs/tools/postman.png',
+      "vscode": 'imgs/tools/vscode.png',
+    }
   },
   {
     "company": 'Tigo Paraguay',
