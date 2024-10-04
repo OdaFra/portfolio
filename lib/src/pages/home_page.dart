@@ -91,7 +91,10 @@ class _HomePageState extends State<HomePage> {
                 ProjectSection(screenWidth: screenWidth, key: navbarKeys[2]),
 
                 //Contact
-                ContactSection(key: navbarKeys[3]),
+                ContactSection(
+                  key: navbarKeys[3],
+                  maxWidth: 300,
+                ),
                 //Footer
                 const FooterSection(),
               ],
