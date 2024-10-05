@@ -1,11 +1,9 @@
-export 'contact_section.dart';
+export 'about_me.dart';
 export 'custom_button_contact.dart';
 export 'custom_skills_items.dart';
-export 'custom_textfield.dart';
 export 'custom_work_experience.dart';
 export 'floating_action_button.dart';
 export 'footer_section.dart';
-export 'header_desktop.dart';
 export 'presentation_am.dart';
 export 'professional_skill.dart';
 export 'project_card.dart';

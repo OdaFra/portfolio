@@ -45,10 +45,10 @@ const List<Map> frameworkItems = [
     "icon": 'imgs/framework/expressjs.png',
     "title": "Express Js",
   },
-  {
-    "icon": 'imgs/framework/Django.png',
-    "title": "Django",
-  },
+  // {
+  //   "icon": 'imgs/framework/Django.png',
+  //   "title": "Django",
+  // },
   {
     "icon": 'imgs/framework/fastapi.png',
     "title": "FastApi",
