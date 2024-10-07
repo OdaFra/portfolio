@@ -1,9 +1,9 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:web_portfolio/src/utils/project_utils.dart';
-
 import 'dart:js' as js;
-
 import '../themes/themes.dart';
 
 class ProjectsCardWidget extends StatelessWidget {
@@ -18,8 +18,8 @@ class ProjectsCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: 280,
-      width: 250,
+      height: 240,
+      width: 280,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: CustomColor.bgLiht2,
@@ -28,14 +28,15 @@ class ProjectsCardWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(
-            project.image, //'assets/projects/tm_ejemplo.png',
-            height: 140,
-            width: 250,
-            fit: BoxFit.cover,
+          Expanded(
+            child: Image.asset(
+              project.image,
+              width: 280,
+              fit: BoxFit.cover,
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(12, 15, 12, 12),
+            padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
             child: Text(
               project.title,
               style: const TextStyle(
@@ -45,7 +46,7 @@ class ProjectsCardWidget extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+            padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
             child: Text(
               project.subtitle,
               style: const TextStyle(
@@ -54,19 +55,18 @@ class ProjectsCardWidget extends StatelessWidget {
               ),
             ),
           ),
-          const Spacer(),
-          //footer
+          // footer
           Container(
             color: CustomColor.bgLiht1,
             padding: const EdgeInsets.symmetric(
               horizontal: 12,
-              vertical: 10,
+              vertical: 8, // Reduce el padding vertical
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const AutoSizeText(
-                  'Available on: ',
+                  'Disponible en: ',
                   style: TextStyle(
                     color: CustomColor.yellowPrimary,
                     fontSize: 10,
@@ -84,7 +84,7 @@ class ProjectsCardWidget extends StatelessWidget {
                         );
                       },
                       child: Image.asset(
-                        'assets/projects/androide.png',
+                        'assets/imgs/projects/androide.png',
                         width: 18,
                         color: CustomColor.yellowPrimary,
                       ),
@@ -101,7 +101,7 @@ class ProjectsCardWidget extends StatelessWidget {
                         );
                       },
                       child: Image.asset(
-                        'assets/projects/manzana.png',
+                        'assets/imgs/projects/manzana.png',
                         width: 18,
                         color: CustomColor.yellowPrimary,
                       ),
@@ -109,7 +109,7 @@ class ProjectsCardWidget extends StatelessWidget {
                   ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
