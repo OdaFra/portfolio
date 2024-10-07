@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
-
-import '../../themes/themes.dart';
 
 class MainMobile extends StatelessWidget {
   const MainMobile({super.key});
@@ -9,7 +8,7 @@ class MainMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final screenWidth = screenSize.width;
+    // final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
@@ -18,23 +17,22 @@ class MainMobile extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: (screenHeight * 0.15) / 2),
-          CircleAvatar(
-            backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
-            radius: (screenWidth * 0.35) / 2.5,
-            child: ShaderMask(
-              shaderCallback: (bounds) {
-                return LinearGradient(colors: [
-                  CustomColor.scaffoldBg.withOpacity(0.5),
-                  CustomColor.scaffoldBg.withOpacity(0.5)
-                ]).createShader(bounds);
-              },
-              blendMode: BlendMode.srcATop,
-              child: ClipOval(
-                child: Image.asset(
-                  'assets/imgs/perfilgithub.jpg',
-                  width: screenWidth,
-                ),
-              ),
+          Container(
+            clipBehavior: Clip.antiAlias,
+            height: 250,
+            width: 180,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 4,
+                    offset: const Offset(4, 4),
+                  ),
+                ]),
+            child: Image.asset(
+              'assets/imgs/perfil/perfilgithub.jpeg',
             ),
           ),
           ConstrainedBox(
@@ -43,7 +41,10 @@ class MainMobile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: 25),
-                CustomPresentationAM(maxWidth: 350),
+                CustomPresentationAM(
+                  maxWidth: 350,
+                  aboutMe: aboutMeItems,
+                ),
                 CustomButtonContacts()
               ],
             ),

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeProvider>(context).themeData,
-      title: 'Code With Oda - Portfolio',
+      title: 'Portfolio de Oda',
       home: const HomePage(),
     );
   }
