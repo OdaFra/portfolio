@@ -87,13 +87,14 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 const SizedBox(height: 30),
-                // PROJECT
+                // Projects
                 ProjectSection(screenWidth: screenWidth, key: navbarKeys[2]),
-
-                //Contact
-                ContactSection(
+                
+                //About me
+                AboutMeSection(
                   key: navbarKeys[3],
                   maxWidth: 300,
+                  aboutMe: aboutMeItems,
                 ),
                 //Footer
                 const FooterSection(),

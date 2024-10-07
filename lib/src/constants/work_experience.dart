@@ -47,7 +47,7 @@ List<Map> workExperienceItems = [
       "flutter": 'imgs/framework/Flutter.png',
       "python": 'imgs/languages/Python.png',
       "fastapi": 'imgs/framework/fastapi.png',
-      "django": 'imgs/framework/Django.png',
+      // "django": 'imgs/framework/Django.png',
       "docker": 'imgs/tools/docker.png',
       "nodejs": 'imgs/tools/nodeJs.png',
       "express": 'imgs/framework/expressjs.png',
