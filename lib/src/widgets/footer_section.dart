@@ -13,7 +13,7 @@ class FooterSection extends StatelessWidget {
       width: double.maxFinite,
       alignment: Alignment.center,
       child: const AutoSizeText(
-        'Made by Oscar Ramirez with flutter 3.22',
+        'Realizado por Oscar Ramirez con flutter 3.22 - © 2024 Casi todos los derechos reservados',
         style: TextStyle(
           fontWeight: FontWeight.w400,
           color: CustomColor.witheSecondary,

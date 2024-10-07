@@ -19,7 +19,7 @@ class ProjectSection extends StatelessWidget {
         children: [
           //Work Project title
           const AutoSizeText(
-            'Work projects',
+            'Proyectos de trabajo',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -47,7 +47,7 @@ class ProjectSection extends StatelessWidget {
           ),
           //Hobby Project
           const AutoSizeText(
-            'Hobby projects',
+            'Proyectos personales',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,

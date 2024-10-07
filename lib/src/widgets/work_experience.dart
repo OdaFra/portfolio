@@ -36,9 +36,7 @@ class WorkExperience extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 50),
-
-         // if (constraints.maxWidth >= isDesktopSize) const SkillDesktop()
-         CustomsWorkExperience( workExperiencelList: workExperienceItems)
+          CustomsWorkExperience(workExperiencelList: workExperienceItems)
         ],
       ),
     );

@@ -33,7 +33,7 @@ class ProfessionalSkills extends StatelessWidget {
             children: [
               SizedBox(width: 10),
               AutoSizeText(
-                'Professional Skills',
+                'Habilidades Profesionales',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.w800,
