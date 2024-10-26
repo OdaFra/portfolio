@@ -15,7 +15,6 @@ class HeaderMobile extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 55.0,
-      // margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
       decoration: kHederDecoration,
       child: Row(
         children: [

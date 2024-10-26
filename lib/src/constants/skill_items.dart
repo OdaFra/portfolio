@@ -123,22 +123,3 @@ const List<Map> osItems = [
     "title": "Windows",
   },
 ];
-
-// const List<Map> skillItems = [
-//   {
-//     "icon": 'imgs/Flutter.png',
-//     "title": "Flutter",
-//   },
-//   {
-//     "icon": 'imgs/NodeJs.png',
-//     "title": "Node Js",
-//   },
-//   {
-//     "icon": 'imgs/Django.png',
-//     "title": "Django",
-//   },
-//   {
-//     "icon": 'imgs/Docker.png',
-//     "title": "Docker",
-//   }
-// ];

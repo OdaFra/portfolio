@@ -32,13 +32,15 @@ class ProfessionalSkills extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(width: 10),
-              AutoSizeText(
-                'Habilidades Profesionales',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w800,
-                  color: CustomColor.whitePrimary,
-                  letterSpacing: 1.5,
+              Expanded(
+                child: AutoSizeText(
+                  'Habilidades Profesionales',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: CustomColor.whitePrimary,
+                  ),
                 ),
               ),
             ],

@@ -65,35 +65,34 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 SizedBox(key: sizedBoxKey),
-
                 //Presentation
                 if (constraints.maxWidth >= isMobileSize)
                   const MainDesktop()
                 else
                   const MainMobile(),
-
                 //Skill
                 ProfessionalSkills(
                   navbarKeys: navbarKeys,
                   screenWidth: screenWidth,
                   constraints: constraints,
                 ),
-
                 //Exprience
                 WorkExperience(
                   navbarKeys: navbarKeys,
                   screenWidth: screenWidth,
                   constraints: constraints,
                 ),
-
                 const SizedBox(height: 30),
                 // Projects
-                ProjectSection(screenWidth: screenWidth, key: navbarKeys[2]),
-                
+                ProjectSection(
+                  screenWidth: screenWidth,
+                  key: navbarKeys[2],
+                ),
                 //About me
                 AboutMeSection(
                   key: navbarKeys[3],
-                  maxWidth: 300,
+                  screenWidth: screenWidth,
+                  constraints: constraints,
                   aboutMe: aboutMeItems,
                 ),
                 //Footer
