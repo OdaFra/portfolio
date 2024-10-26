@@ -1,18 +1,47 @@
+import 'dart:js' as js;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'dart:js' as js;
 import '../constants/constants.dart';
 import '../themes/themes.dart';
 
 class AboutMeSection extends StatelessWidget {
   const AboutMeSection({
     super.key,
-    required this.maxWidth,
+    required this.screenWidth,
+    required this.constraints,
     required this.aboutMe,
   });
 
-  final double maxWidth;
+  final double screenWidth;
+  final BoxConstraints constraints;
   final List<Map> aboutMe;
+
+  @override
+  Widget build(BuildContext context) {
+    final isSmallScreen = screenWidth <= 450;
+
+    return Container(
+      padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+      child: AboutMeBody(
+        screenWidth: screenWidth,
+        aboutMe: aboutMe,
+        isSmallScreen: isSmallScreen,
+      ),
+    );
+  }
+}
+
+class AboutMeBody extends StatelessWidget {
+  const AboutMeBody({
+    super.key,
+    required this.screenWidth,
+    required this.aboutMe,
+    required this.isSmallScreen,
+  });
+
+  final double screenWidth;
+  final List<Map> aboutMe;
+  final bool isSmallScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +50,7 @@ class AboutMeSection extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(25),
         child: Container(
+          width: screenWidth,
           padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
           color: CustomColor.bgLiht1,
           child: Column(
@@ -37,44 +67,17 @@ class AboutMeSection extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               for (int i = 0; i < aboutMe.length; i++) ...[
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: AutoSizeText(
-                        aboutMe[i]['aboutme'],
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                          color: CustomColor.textFieldBg,
-                          fontWeight: FontWeight.bold,
-                          fontSize: maxWidth <= 350 ? 14 : 16.0,
-                        ),
+                isSmallScreen
+                    ? AboutMeMobile(
+                        imagePath: 'assets/imgs/perfil/graduacion.jpg',
+                        aboutMeText: aboutMe[i]['aboutme'],
+                        screenWidth: screenWidth,
+                      )
+                    : AboutMeDesktop(
+                        imagePath: 'assets/imgs/perfil/graduacion.jpg',
+                        aboutMeText: aboutMe[i]['aboutme'],
+                        screenWidth: screenWidth,
                       ),
-                    ),
-                    const SizedBox(width: 20),
-                    Container(
-                      clipBehavior: Clip.antiAlias,
-                      height: 300,
-                      width: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
-                            spreadRadius: 2,
-                            blurRadius: 6,
-                            offset: const Offset(4, 4),
-                          ),
-                        ],
-                      ),
-                      child: Image.asset(
-                        'assets/imgs/perfil/graduacion.jpg',
-                        fit: BoxFit.cover,
-                      ),
-                    )
-                  ],
-                ),
                 const SizedBox(height: 30),
               ],
               ConstrainedBox(
@@ -82,8 +85,6 @@ class AboutMeSection extends StatelessWidget {
                 child: const Divider(),
               ),
               const SizedBox(height: 15),
-
-              // Icon Buttons Links
               Wrap(
                 spacing: 12,
                 runSpacing: 12,
@@ -114,6 +115,123 @@ class AboutMeSection extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AboutMeMobile extends StatelessWidget {
+  const AboutMeMobile({
+    super.key,
+    required this.imagePath,
+    required this.aboutMeText,
+    required this.screenWidth,
+  });
+
+  final String imagePath;
+  final String aboutMeText;
+  final double screenWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 300,
+          width: 200,
+          child: _buildImage(),
+        ),
+        const SizedBox(height: 30),
+        AutoSizeText(
+          aboutMeText,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: CustomColor.textFieldBg,
+            fontWeight: FontWeight.bold,
+            fontSize: screenWidth <= 350 ? 14 : 16.0,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildImage() {
+    return Container(
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 6,
+            offset: const Offset(4, 4),
+          ),
+        ],
+      ),
+      child: Image.asset(
+        imagePath,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+}
+
+class AboutMeDesktop extends StatelessWidget {
+  const AboutMeDesktop({
+    super.key,
+    required this.imagePath,
+    required this.aboutMeText,
+    required this.screenWidth,
+  });
+
+  final String imagePath;
+  final String aboutMeText;
+  final double screenWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Flexible(
+          child: AutoSizeText(
+            aboutMeText,
+            textAlign: TextAlign.start,
+            style: TextStyle(
+              color: CustomColor.textFieldBg,
+              fontWeight: FontWeight.bold,
+              fontSize: screenWidth <= 350 ? 12 : 14.0,
+            ),
+          ),
+        ),
+        const SizedBox(width: 20),
+        Flexible(
+          child: _buildImage(),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildImage() {
+    return Container(
+      clipBehavior: Clip.antiAlias,
+      height: 300,
+      width: 200,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 6,
+            offset: const Offset(4, 4),
+          ),
+        ],
+      ),
+      child: Image.asset(
+        imagePath,
+        fit: BoxFit.cover,
       ),
     );
   }
