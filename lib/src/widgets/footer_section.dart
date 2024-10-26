@@ -9,14 +9,15 @@ class FooterSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 25),
       width: double.maxFinite,
-      alignment: Alignment.center,
-      child: const AutoSizeText(
-        'Realizado por Oscar Ramirez con flutter 3.22 - © 2024 Casi todos los derechos reservados',
-        style: TextStyle(
-          fontWeight: FontWeight.w400,
-          color: CustomColor.witheSecondary,
+      child: const Center(
+        child: AutoSizeText(
+          'Realizado por Oscar Ramirez con flutter 3.22 - © 2024 Casi todos los derechos reservados',
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            color: CustomColor.witheSecondary,
+          ),
         ),
       ),
     );
