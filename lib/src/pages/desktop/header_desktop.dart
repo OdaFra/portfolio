@@ -1,11 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../constants/constants.dart';
+import '../../providers/providers.dart';
 import '../../themes/themes.dart';
 import '../../widgets/widgets.dart';
 
-class HeaderDestkopAppBar extends StatelessWidget
+class HeaderDestkopAppBar extends ConsumerWidget
     implements PreferredSizeWidget {
   const HeaderDestkopAppBar(
       {super.key, required this.onNavMenuTap, this.onNavTitleTap});
@@ -16,7 +18,7 @@ class HeaderDestkopAppBar extends StatelessWidget
   final Size preferredSize = const Size.fromHeight(55.0);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return AppBar(
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(4.0),
@@ -54,10 +56,13 @@ class HeaderDestkopAppBar extends StatelessWidget
         // ),
         const SizedBox(width: 5),
         IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.dark_mode,
+          icon: Icon(
+            ref.watch(themeModeNotifierProvider) == ThemeMode.light
+                ? Icons.light_mode_outlined
+                : Icons.dark_mode_outlined,
           ),
+          onPressed: () =>
+              ref.read(themeModeNotifierProvider.notifier).toggle(),
         ),
         const SizedBox(width: 15),
       ],

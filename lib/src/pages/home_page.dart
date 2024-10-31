@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                     scrollToSection(navIndex);
                   },
                 ),
-          backgroundColor: CustomColor.scaffoldBg,
+          // backgroundColor: CustomColor.scaffoldBg,
           body: SingleChildScrollView(
             controller: scrollController,
             scrollDirection: Axis.vertical,

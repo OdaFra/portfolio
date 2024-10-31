@@ -1,15 +1,17 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../constants/constants.dart';
+import '../../providers/providers.dart';
 import '../../themes/themes.dart';
 
-class MobileDrawer extends StatelessWidget {
+class MobileDrawer extends ConsumerWidget {
   const MobileDrawer({super.key, required this.onNavItemTap});
   final Function(int) onNavItemTap;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Drawer(
       backgroundColor: CustomColor.scaffoldBg,
       child: Column(
@@ -67,10 +69,13 @@ class MobileDrawer extends StatelessWidget {
               // ),
               const SizedBox(width: 5),
               IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.dark_mode,
+                icon: Icon(
+                  ref.watch(themeModeNotifierProvider) == ThemeMode.light
+                      ? Icons.light_mode_outlined
+                      : Icons.dark_mode_outlined,
                 ),
+                onPressed: () =>
+                    ref.read(themeModeNotifierProvider.notifier).toggle(),
               ),
             ],
           ),
