@@ -31,7 +31,6 @@ class CustomPresentationAM extends StatelessWidget {
                   textAlign:
                       maxWidth <= 300 ? TextAlign.center : TextAlign.start,
                   style: TextStyle(
-                    color: CustomColor.whitePrimary,
                     fontWeight: FontWeight.w800,
                     fontSize: maxWidth <= 350 ? 16.0 : 24.0,
                     height: 1.5,
@@ -44,7 +43,6 @@ class CustomPresentationAM extends StatelessWidget {
                   textAlign:
                       maxWidth <= 300 ? TextAlign.center : TextAlign.start,
                   style: TextStyle(
-                    color: CustomColor.textFieldBg,
                     fontWeight: FontWeight.bold,
                     fontSize: maxWidth <= 350 ? 14 : 16.0,
                   ),
@@ -59,7 +57,6 @@ class CustomPresentationAM extends StatelessWidget {
         AutoSizeText(
           "Contáctame",
           style: TextStyle(
-            color: CustomColor.whitePrimary,
             fontWeight: FontWeight.w400,
             fontSize: maxWidth <= 350 ? 12 : 14.0,
             height: 1.5,

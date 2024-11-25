@@ -14,6 +14,7 @@ class CustomButtonContacts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final containerColor = Theme.of(context).colorScheme.secondary;
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 450),
       child: Wrap(
@@ -34,7 +35,7 @@ class CustomButtonContacts extends StatelessWidget {
                     alignment: Alignment.center,
                     width: 150,
                     decoration: BoxDecoration(
-                      color: CustomColor.yellowPrimary,
+                      color: containerColor,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: ListTile(
@@ -42,7 +43,6 @@ class CustomButtonContacts extends StatelessWidget {
                           const EdgeInsets.symmetric(horizontal: 14.0),
                       leading: Image.asset(
                         contactsItems[i]['icon'],
-                        color: CustomColor.scaffoldBg,
                         width: 22.0,
                       ),
                       title: Center(

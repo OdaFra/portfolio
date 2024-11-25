@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/themes.dart';
 import '../../widgets/widgets.dart';
 
 class HeaderMobile extends StatelessWidget implements PreferredSizeWidget {
@@ -13,9 +12,8 @@ class HeaderMobile extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 55.0,
-      decoration: kHederDecoration,
       child: Row(
         children: [
           SiteLogo(

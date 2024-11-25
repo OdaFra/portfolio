@@ -1,28 +1,30 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../themes/themes.dart';
-
-class SiteLogo extends StatelessWidget {
+class SiteLogo extends ConsumerWidget {
   const SiteLogo({
     super.key,
     this.onPressed,
   });
   final VoidCallback? onPressed;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final titleColor = Theme.of(context).colorScheme.primary;
+    final iconColor = Theme.of(context).colorScheme.onPrimary;
+
     return Padding(
       padding: const EdgeInsets.only(left: 30.0),
       child: TextButton(
         onPressed: onPressed,
-        child: const Row(
+        child: Row(
           children: [
             AutoSizeText(
               '< ',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: CustomColor.whitePrimary,
+                color: iconColor,
               ),
             ),
             AutoSizeText(
@@ -30,7 +32,7 @@ class SiteLogo extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: CustomColor.yellowPrimary,
+                color: titleColor,
               ),
             ),
             AutoSizeText(
@@ -38,7 +40,7 @@ class SiteLogo extends StatelessWidget {
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: CustomColor.whitePrimary,
+                color: iconColor,
               ),
             ),
           ],

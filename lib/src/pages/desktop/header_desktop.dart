@@ -19,6 +19,9 @@ class HeaderDestkopAppBar extends ConsumerWidget
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final bgColor = Theme.of(context).scaffoldBackgroundColor;
+    final itemColor = Theme.of(context).colorScheme.onSecondary;
+
     return AppBar(
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(4.0),
@@ -28,32 +31,14 @@ class HeaderDestkopAppBar extends ConsumerWidget
         ),
       ),
       scrolledUnderElevation: 0.0,
-      flexibleSpace: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.transparent,
-              CustomColor.bgLiht1,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-      ),
       actions: [
         IconButton(
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.mail_outline,
+            color: itemColor,
           ),
         ),
-        // const SizedBox(width: 5),
-        // IconButton(
-        //   onPressed: () {},
-        //   icon: const Icon(
-        //     Icons.language_rounded,
-        //   ),
-        // ),
         const SizedBox(width: 5),
         IconButton(
           icon: Icon(
@@ -61,14 +46,14 @@ class HeaderDestkopAppBar extends ConsumerWidget
                 ? Icons.light_mode_outlined
                 : Icons.dark_mode_outlined,
           ),
+          color: itemColor,
           onPressed: () =>
               ref.read(themeModeNotifierProvider.notifier).toggle(),
         ),
         const SizedBox(width: 15),
       ],
-      backgroundColor: CustomColor.scaffoldBg,
+      backgroundColor: bgColor,
       title: Container(
-        color: Colors.transparent,
         height: 70,
         margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
         width: double.maxFinite,
@@ -89,10 +74,10 @@ class HeaderDestkopAppBar extends ConsumerWidget
                   },
                   child: AutoSizeText(
                     navTitles[i],
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
-                      color: CustomColor.whitePrimary,
+                      color: itemColor,
                     ),
                   ),
                 ),

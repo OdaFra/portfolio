@@ -13,6 +13,7 @@ class ProjectSection extends StatelessWidget {
   Widget build(BuildContext context) {
     //Work Project
     return Container(
+      color: CustomColor.bgLiht1,
       width: screenWidth,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
       child: Column(

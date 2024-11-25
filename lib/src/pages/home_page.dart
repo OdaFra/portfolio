@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/pages/mobile/mobile_drawer.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
-import '../themes/themes.dart';
 import 'desktop/desktop.dart';
 import 'desktop/main_desktop.dart';
 import 'mobile/header_mobile.dart';
@@ -58,7 +57,6 @@ class _HomePageState extends State<HomePage> {
                     scrollToSection(navIndex);
                   },
                 ),
-          // backgroundColor: CustomColor.scaffoldBg,
           body: SingleChildScrollView(
             controller: scrollController,
             scrollDirection: Axis.vertical,
@@ -82,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                   screenWidth: screenWidth,
                   constraints: constraints,
                 ),
-                const SizedBox(height: 30),
+
                 // Projects
                 ProjectSection(
                   screenWidth: screenWidth,
