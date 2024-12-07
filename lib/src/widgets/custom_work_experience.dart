@@ -1,8 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-import '../themes/themes.dart';
-
 class CustomsWorkExperience extends StatelessWidget {
   const CustomsWorkExperience({
     super.key,
@@ -17,6 +15,8 @@ class CustomsWorkExperience extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final containerColor = Theme.of(context).colorScheme.surface;
+
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 800),
       child: Column(
@@ -33,7 +33,7 @@ class CustomsWorkExperience extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                  color: CustomColor.bgLiht1,
+                  color: containerColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
@@ -59,14 +59,12 @@ class CustomsWorkExperience extends StatelessWidget {
                       item['year'],
                       style: const TextStyle(
                         fontSize: 14,
-                        color: Colors.grey,
                       ),
                     ),
                     AutoSizeText(
                       item['ubication'],
                       style: const TextStyle(
                         fontSize: 14,
-                        color: Colors.grey,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -83,7 +81,6 @@ class CustomsWorkExperience extends StatelessWidget {
                             runSpacing: 8,
                             children: skillMap.entries.map((skill) {
                               return Chip(
-                                backgroundColor: CustomColor.bgLiht2,
                                 padding: const EdgeInsets.symmetric(
                                   vertical: 10.0,
                                   horizontal: 10.0,

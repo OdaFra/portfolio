@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
-import 'package:web_portfolio/src/themes/themes.dart';
 
 import 'widgets.dart';
 
@@ -19,21 +18,19 @@ class ProfessionalSkills extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final containerColor = Theme.of(context).colorScheme.surface;
-       final itemColor = Theme.of(context).colorScheme.onSecondary;
+    final itemColor = Theme.of(context).colorScheme.onSecondary;
     return Container(
       key: navbarKeys[0],
       width: screenWidth,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-      color: containerColor,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           const SizedBox(height: 30),
-           Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: AutoSizeText(
                   'Habilidades Profesionales',
@@ -51,7 +48,6 @@ class ProfessionalSkills extends StatelessWidget {
           CustomsSkillsItems(
             title: 'Plataformas',
             skillList: platformItems,
-            iconColor: CustomColor.whitePrimary,
           ),
           const SizedBox(height: 10),
           const CustomsSkillsItems(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:web_portfolio/src/constants/constants.dart';
 import 'package:web_portfolio/src/pages/mobile/mobile_drawer.dart';
 import 'package:web_portfolio/src/widgets/widgets.dart';
+import '../themes/colors.dart';
 import 'desktop/desktop.dart';
 import 'desktop/main_desktop.dart';
 import 'mobile/header_mobile.dart';
@@ -69,23 +70,26 @@ class _HomePageState extends State<HomePage> {
                 else
                   const MainMobile(),
                 //Skill
+                Container(color: CustomColor.grey5Color, height: 1.0),
                 ProfessionalSkills(
                   navbarKeys: navbarKeys,
                   screenWidth: screenWidth,
                   constraints: constraints,
                 ),
+                Container(color: CustomColor.grey5Color, height: 1.0),
                 //Exprience
                 WorkExperience(
                   navbarKeys: navbarKeys,
                   screenWidth: screenWidth,
                   constraints: constraints,
                 ),
-
+                Container(color: CustomColor.grey5Color, height: 1.0),
                 // Projects
                 ProjectSection(
                   screenWidth: screenWidth,
                   key: navbarKeys[2],
                 ),
+                Container(color: CustomColor.grey5Color, height: 1.0),
                 //About me
                 AboutMeSection(
                   key: navbarKeys[3],

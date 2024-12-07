@@ -2,7 +2,6 @@ import 'dart:js' as js;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import '../constants/constants.dart';
-import '../themes/themes.dart';
 
 class AboutMeSection extends StatelessWidget {
   const AboutMeSection({
@@ -50,6 +49,9 @@ class AboutMeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final titleColor = Theme.of(context).colorScheme.onSecondary;
+    final containerBgColor = Theme.of(context).colorScheme.surface;
+
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 800),
       child: ClipRRect(
@@ -57,18 +59,17 @@ class AboutMeBody extends StatelessWidget {
         child: Container(
           width: screenWidth,
           padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-          color: CustomColor.bgLiht1,
+          color: containerBgColor,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const AutoSizeText(
+              AutoSizeText(
                 textAlign: TextAlign.center,
                 'Sobre mí',
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                  color: CustomColor.whitePrimary,
-                ),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    color: titleColor),
               ),
               const SizedBox(height: 30),
               for (int i = 0; i < aboutMe.length; i++) ...[
@@ -102,18 +103,15 @@ class AboutMeBody extends StatelessWidget {
                     child: Image.asset(
                       'assets/contacts/github.png',
                       width: 24,
-                      color: CustomColor.whitePrimary,
+                      color: titleColor,
                     ),
                   ),
                   InkWell(
                     onTap: () {
                       js.context.callMethod('open', [SnsLinks.linkedin]);
                     },
-                    child: Image.asset(
-                      'assets/contacts/linkedin.png',
-                      width: 24,
-                      color: CustomColor.whitePrimary,
-                    ),
+                    child: Image.asset('assets/contacts/linkedin.png',
+                        width: 24, color: titleColor),
                   ),
                 ],
               ),
@@ -139,6 +137,8 @@ class AboutMeMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final titleColor = Theme.of(context).colorScheme.onSecondary;
+
     return Column(
       children: [
         SizedBox(
@@ -151,7 +151,7 @@ class AboutMeMobile extends StatelessWidget {
           aboutMeText,
           textAlign: TextAlign.center,
           style: TextStyle(
-            color: CustomColor.textFieldBg,
+            color: titleColor,
             fontWeight: FontWeight.bold,
             fontSize: screenWidth <= 350 ? 14 : 16.0,
           ),
@@ -196,6 +196,8 @@ class AboutMeDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final titleColor = Theme.of(context).colorScheme.onSecondary;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -204,7 +206,7 @@ class AboutMeDesktop extends StatelessWidget {
             aboutMeText,
             textAlign: TextAlign.start,
             style: TextStyle(
-              color: CustomColor.textFieldBg,
+              color: titleColor,
               fontWeight: FontWeight.bold,
               fontSize: screenWidth <= 350 ? 12 : 14.0,
             ),

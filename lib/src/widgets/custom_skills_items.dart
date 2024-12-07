@@ -19,14 +19,14 @@ class CustomsSkillsItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final itemColor = Theme.of(context).colorScheme.onSecondary;
+    final collapsedBgColor = Theme.of(context).colorScheme.surface;
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 800),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: ExpansionTile(
           expandedAlignment: Alignment.center,
-          collapsedBackgroundColor: CustomColor.scaffoldBg,
+          collapsedBackgroundColor: collapsedBgColor,
           iconColor: CustomColor.yellowPrimary,
           textColor: CustomColor.yellowPrimary,
           title: Text(
@@ -51,7 +51,6 @@ class CustomsSkillsItems extends StatelessWidget {
                   children: [
                     for (int i = 0; i < skillList.length; i++)
                       Chip(
-                        backgroundColor: CustomColor.bgLiht2,
                         padding: const EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 10.0),
                         avatar: Image.asset(

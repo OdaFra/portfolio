@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-import '../themes/themes.dart';
 import '../utils/project_utils.dart';
 import 'widgets.dart';
 
@@ -11,21 +10,18 @@ class ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final titleColor = Theme.of(context).colorScheme.onSecondary;
     //Work Project
     return Container(
-      color: CustomColor.bgLiht1,
       width: screenWidth,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
       child: Column(
         children: [
           //Work Project title
-          const AutoSizeText(
+          AutoSizeText(
             'Proyectos de trabajo',
             style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
-            ),
+                fontSize: 24, fontWeight: FontWeight.bold, color: titleColor),
           ),
           const SizedBox(
             height: 40,
@@ -47,13 +43,10 @@ class ProjectSection extends StatelessWidget {
             height: 40,
           ),
           //Hobby Project
-          const AutoSizeText(
+          AutoSizeText(
             'Proyectos personales',
             style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
-            ),
+                fontSize: 24, fontWeight: FontWeight.bold, color: titleColor),
           ),
           const SizedBox(
             height: 40,

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:web_portfolio/src/utils/project_utils.dart';
 import 'dart:js' as js;
-import '../themes/themes.dart';
 
 class ProjectsCardWidget extends StatelessWidget {
   const ProjectsCardWidget({
@@ -16,14 +15,15 @@ class ProjectsCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final itemColor = Theme.of(context).colorScheme.onSecondary;
+    final containerBgColor = Theme.of(context).colorScheme.surface;
+
     return Container(
       clipBehavior: Clip.antiAlias,
       height: 240,
       width: 280,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: CustomColor.bgLiht2,
-      ),
+          borderRadius: BorderRadius.circular(15), color: containerBgColor),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -39,25 +39,18 @@ class ProjectsCardWidget extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
             child: Text(
               project.title,
-              style: const TextStyle(
-                fontWeight: FontWeight.w600,
-                color: CustomColor.whitePrimary,
-              ),
+              style: TextStyle(fontWeight: FontWeight.w600, color: itemColor),
             ),
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
             child: Text(
               project.subtitle,
-              style: const TextStyle(
-                fontSize: 12,
-                color: CustomColor.witheSecondary,
-              ),
+              style: TextStyle(fontSize: 12, color: itemColor),
             ),
           ),
           // footer
           Container(
-            color: CustomColor.bgLiht1,
             padding: const EdgeInsets.symmetric(
               horizontal: 12,
               vertical: 8, // Reduce el padding vertical
@@ -68,7 +61,6 @@ class ProjectsCardWidget extends StatelessWidget {
                 const AutoSizeText(
                   'Disponible en: ',
                   style: TextStyle(
-                    color: CustomColor.yellowPrimary,
                     fontSize: 10,
                   ),
                 ),
@@ -86,7 +78,7 @@ class ProjectsCardWidget extends StatelessWidget {
                       child: Image.asset(
                         'assets/imgs/projects/androide.png',
                         width: 18,
-                        color: CustomColor.yellowPrimary,
+                        color: itemColor,
                       ),
                     ),
                   ),
@@ -103,7 +95,7 @@ class ProjectsCardWidget extends StatelessWidget {
                       child: Image.asset(
                         'assets/imgs/projects/manzana.png',
                         width: 18,
-                        color: CustomColor.yellowPrimary,
+                        color: itemColor,
                       ),
                     ),
                   ),
