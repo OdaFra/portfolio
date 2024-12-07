@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../constants/constants.dart';
 import '../../providers/providers.dart';
-import '../../themes/themes.dart';
 
 class MobileDrawer extends ConsumerWidget {
   const MobileDrawer({super.key, required this.onNavItemTap});
@@ -12,8 +11,9 @@ class MobileDrawer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final itemColor = Theme.of(context).colorScheme.onSecondary;
+
     return Drawer(
-      backgroundColor: CustomColor.scaffoldBg,
       child: Column(
         children: [
           Align(
@@ -36,9 +36,10 @@ class MobileDrawer extends ConsumerWidget {
                         const EdgeInsets.symmetric(horizontal: 30.0),
                     leading: Icon(
                       navIcons[index],
+                      color: itemColor,
                     ),
-                    titleTextStyle: const TextStyle(
-                      color: CustomColor.whitePrimary,
+                    titleTextStyle: TextStyle(
+                      color: itemColor,
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
                     ),
@@ -60,13 +61,6 @@ class MobileDrawer extends ConsumerWidget {
                   Icons.mail_outline,
                 ),
               ),
-              // const SizedBox(width: 5),
-              // IconButton(
-              //   onPressed: () {},
-              //   icon: const Icon(
-              //     Icons.language_rounded,
-              //   ),
-              // ),
               const SizedBox(width: 5),
               IconButton(
                 icon: Icon(
@@ -74,6 +68,7 @@ class MobileDrawer extends ConsumerWidget {
                       ? Icons.light_mode_outlined
                       : Icons.dark_mode_outlined,
                 ),
+                color: itemColor,
                 onPressed: () =>
                     ref.read(themeModeNotifierProvider.notifier).toggle(),
               ),

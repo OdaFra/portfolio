@@ -21,12 +21,15 @@ class CustomColor {
   static const Color grey3Color = Color.fromRGBO(216, 216, 216, 1);
   static const Color grey4Color = Color.fromRGBO(142, 142, 142, 1);
   static const Color grey5Color = Color.fromRGBO(94, 93, 93, 1);
-  static const Color grey6Color = Color(0x0fd3d1d1);
+  static const Color gris6Color = Color(0x0fd3d1d1);
+  static const Color gris7Color = Color.fromRGBO(48, 48, 48, 1);
 
   ///OTROS
   static const Color dividerLightColor = Color.fromRGBO(151, 151, 151, 1);
   static const Color dividerDarkColor = Color.fromRGBO(241, 241, 241, 1);
-  static const Color floatingButtonColor = Color.fromRGBO(34, 102, 226, 1);
   static const Color backgroundTile = Color.fromRGBO(224, 254, 230, 1);
   static const Color darkCardBg = Color.fromRGBO(20, 26, 32, 1);
+  static const Color darkBg1Color = Color.fromRGBO(31, 27, 36, 1);
+  static const Color darkBg2Color = Color.fromRGBO(18, 18, 18, 1);
+  static const Color darkBg3Color = Color.fromRGBO(32, 26, 35, 1);
 }

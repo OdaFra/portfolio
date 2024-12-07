@@ -19,16 +19,18 @@ class ProfessionalSkills extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final containerColor = Theme.of(context).colorScheme.surface;
+       final itemColor = Theme.of(context).colorScheme.onSecondary;
     return Container(
       key: navbarKeys[0],
       width: screenWidth,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-      color: CustomColor.bgLiht1,
+      color: containerColor,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           const SizedBox(height: 30),
-          const Row(
+           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(width: 10),
@@ -39,7 +41,7 @@ class ProfessionalSkills extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: CustomColor.whitePrimary,
+                    color: itemColor,
                   ),
                 ),
               ),

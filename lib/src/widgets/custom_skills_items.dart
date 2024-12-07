@@ -19,6 +19,7 @@ class CustomsSkillsItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final itemColor = Theme.of(context).colorScheme.onSecondary;
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 800),
       child: ClipRRect(
@@ -53,7 +54,7 @@ class CustomsSkillsItems extends StatelessWidget {
                         backgroundColor: CustomColor.bgLiht2,
                         padding: const EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 10.0),
-                        avatar:   Image.asset(
+                        avatar: Image.asset(
                           skillList[i]['icon'],
                           color: iconColor,
                           width: 40.0,

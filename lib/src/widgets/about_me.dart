@@ -22,10 +22,15 @@ class AboutMeSection extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-      child: AboutMeBody(
-        screenWidth: screenWidth,
-        aboutMe: aboutMe,
-        isSmallScreen: isSmallScreen,
+      child: Column(
+        children: [
+          const SizedBox(height: 30),
+          AboutMeBody(
+            screenWidth: screenWidth,
+            aboutMe: aboutMe,
+            isSmallScreen: isSmallScreen,
+          ),
+        ],
       ),
     );
   }
