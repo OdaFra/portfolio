@@ -1,9 +1,10 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../constants/constants.dart';
 import '../../providers/providers.dart';
+import '../../utils/email_launcher.dart';
 
 class MobileDrawer extends ConsumerWidget {
   const MobileDrawer({super.key, required this.onNavItemTap});
@@ -56,7 +57,9 @@ class MobileDrawer extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  EmailLauncher.launchEmail('osramirezf@gmail.com');
+                },
                 icon: const Icon(
                   Icons.mail_outline,
                 ),

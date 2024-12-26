@@ -1,10 +1,11 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../constants/constants.dart';
 import '../../providers/providers.dart';
 import '../../themes/themes.dart';
+import '../../utils/email_launcher.dart';
 import '../../widgets/widgets.dart';
 
 class HeaderDestkopAppBar extends ConsumerWidget
@@ -33,7 +34,9 @@ class HeaderDestkopAppBar extends ConsumerWidget
       scrolledUnderElevation: 0.0,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            EmailLauncher.launchEmail('osramirezf@gmail.com');
+          },
           icon: Icon(
             Icons.mail_outline,
             color: itemColor,
