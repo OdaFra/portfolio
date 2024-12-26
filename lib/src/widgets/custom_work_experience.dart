@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class CustomsWorkExperience extends StatelessWidget {
@@ -39,7 +38,8 @@ class CustomsWorkExperience extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    AutoSizeText(
+                    // Posición
+                    Text(
                       item['position'],
                       style: const TextStyle(
                         fontSize: 18,
@@ -47,7 +47,9 @@ class CustomsWorkExperience extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    AutoSizeText(
+
+                    // Empresa
+                    Text(
                       item['company'],
                       style: const TextStyle(
                         fontSize: 16,
@@ -55,42 +57,49 @@ class CustomsWorkExperience extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 4),
-                    AutoSizeText(
+
+                    // Año
+                    Text(
                       item['year'],
                       style: const TextStyle(
                         fontSize: 14,
                       ),
                     ),
-                    AutoSizeText(
+
+                    // Ubicación
+                    Text(
                       item['ubication'],
                       style: const TextStyle(
                         fontSize: 14,
                       ),
                     ),
                     const SizedBox(height: 10),
-                    AutoSizeText(
+
+                    // Descripción
+                    Text(
                       item['description'],
                       style: const TextStyle(
                         fontSize: 14,
                       ),
                     ),
                     const SizedBox(height: 30),
+
+                    // Skills
                     (skillMap != null && skillMap.isNotEmpty)
                         ? Wrap(
                             spacing: 8,
                             runSpacing: 8,
                             children: skillMap.entries.map((skill) {
                               return Chip(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 10.0,
-                                  horizontal: 10.0,
+                                labelPadding: const EdgeInsets.symmetric(
+                                    horizontal: 10.0),
+                                avatar: CircleAvatar(
+                                  maxRadius: 15,
+                                  backgroundImage: AssetImage(skill.value),
+                                  backgroundColor:
+                                      iconColor ?? Colors.transparent,
                                 ),
-                                avatar: Image.asset(
-                                  skill.value,
-                                  color: iconColor,
-                                  width: 40.0,
-                                ),
-                                label: AutoSizeText(skill.key),
+                                label: Text(skill.key),
                               );
                             }).toList(),
                           )
