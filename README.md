@@ -16,7 +16,8 @@ Para ejecutar los proyectos localmente, siga estos pasos:
 
 1. Clona el repositorio: `git clone https://github.com/OdaFra/portfolio.git`
 2. Navega hasta el directorio del proyecto: `cd portfolio`
-3. Ejecuta el proyecto Flutter: `flutter run`.
+3. Obtener dependencias: `flutter pub get`.
+4. Ejecuta el proyecto Flutter: `flutter run`.
 
 ## Contáctame
 
