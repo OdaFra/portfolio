@@ -37,6 +37,7 @@ flutter:
   assets:
     - assets/imgs/
     - assets/imgs/perfil/
+    - assets/imgs/tools/
     - assets/imgs/projects/
     - assets/contacts/
   #   - images/a_dot_ham.jpeg

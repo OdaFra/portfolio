@@ -45,7 +45,7 @@ class ProjectsCardWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
             child: Text(
-              project.subtitle,
+              project.subtitle!,
               style: TextStyle(fontSize: 12, color: itemColor),
             ),
           ),
@@ -65,37 +65,19 @@ class ProjectsCardWidget extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                if (project.androidLink != null)
+                if (project.gitHubLink != null)
                   Padding(
                     padding: const EdgeInsets.only(left: 6),
                     child: InkWell(
                       onTap: () {
                         js.context.callMethod(
                           "open",
-                          [project.androidLink],
+                          [project.gitHubLink],
                         );
                       },
                       child: Image.asset(
-                        'assets/imgs/projects/androide.png',
+                        'assets/imgs/tools/github.png',
                         width: 18,
-                        color: itemColor,
-                      ),
-                    ),
-                  ),
-                if (project.iosLink != null)
-                  Padding(
-                    padding: const EdgeInsets.only(left: 6),
-                    child: InkWell(
-                      onTap: () {
-                        js.context.callMethod(
-                          "open",
-                          [project.iosLink],
-                        );
-                      },
-                      child: Image.asset(
-                        'assets/imgs/projects/manzana.png',
-                        width: 18,
-                        color: itemColor,
                       ),
                     ),
                   ),
