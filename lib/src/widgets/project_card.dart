@@ -23,16 +23,29 @@ class ProjectsCardWidget extends StatelessWidget {
       height: 240,
       width: 280,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15), color: containerBgColor),
+        borderRadius: BorderRadius.circular(15),
+        color: containerBgColor,
+        border: Border.all(
+          color: itemColor,
+          width: 1.5,
+        ),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Expanded(
-            child: Image.asset(
-              project.image,
-              width: 280,
-              fit: BoxFit.cover,
+          Flexible(
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+              ),
+              child: Image.asset(
+                project.image,
+                width: 280,
+                height: 140,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Padding(
@@ -49,12 +62,9 @@ class ProjectsCardWidget extends StatelessWidget {
               style: TextStyle(fontSize: 12, color: itemColor),
             ),
           ),
-          // footer
-          Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 12,
-              vertical: 8, // Reduce el padding vertical
-            ),
+          // Footer
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -64,23 +74,60 @@ class ProjectsCardWidget extends StatelessWidget {
                     fontSize: 10,
                   ),
                 ),
-                const Spacer(),
-                if (project.gitHubLink != null)
-                  Padding(
-                    padding: const EdgeInsets.only(left: 6),
-                    child: InkWell(
-                      onTap: () {
-                        js.context.callMethod(
-                          "open",
-                          [project.gitHubLink],
-                        );
-                      },
-                      child: Image.asset(
-                        'assets/imgs/tools/github.png',
-                        width: 18,
+                Row(
+                  children: [
+                    if (project.gitHubLink != null)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 6),
+                        child: InkWell(
+                          onTap: () {
+                            js.context.callMethod(
+                              "open",
+                              [project.gitHubLink],
+                            );
+                          },
+                          child: Image.asset(
+                            'imgs/tools/github.png',
+                            width: 18,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
+                    if (project.androidLink != null)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 6),
+                        child: InkWell(
+                          onTap: () {
+                            js.context.callMethod(
+                              "open",
+                              [project.androidLink],
+                            );
+                          },
+                          child: Image.asset(
+                            'imgs/platforms/android.png',
+                            width: 18,
+                            color: itemColor,
+                          ),
+                        ),
+                      ),
+                    if (project.iosLink != null)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 6),
+                        child: InkWell(
+                          onTap: () {
+                            js.context.callMethod(
+                              "open",
+                              [project.iosLink],
+                            );
+                          },
+                          child: Image.asset(
+                            'imgs/platforms/ios.png',
+                            width: 18,
+                            color: itemColor,
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
               ],
             ),
           ),
