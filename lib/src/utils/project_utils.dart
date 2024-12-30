@@ -41,13 +41,21 @@ List<ProjectUtils> workProjectUtils = [
 //Hobby Projects
 List<ProjectUtils> hobbyProjectUtils = [
   ProjectUtils(
-      image: 'assets/imgs/projects/portfolio_web.png',
-      title: 'Portfolio Web',
-      subtitle: 'Flutter Web Portfolio',
-      gitHubLink: 'https://github.com/OdaFra/portfolio'),
+    image: 'assets/imgs/projects/portfolio_web.png',
+    title: 'Portfolio Web',
+    subtitle: 'Flutter Web Portfolio',
+    gitHubLink: 'https://github.com/OdaFra/portfolio',
+  ),
   ProjectUtils(
-      image: 'assets/imgs/projects/portfolio_web.png',
-      title: 'Portfolio Web',
-      subtitle: 'Flutter Web Portfolio',
-      gitHubLink: 'https://github.com/OdaFra/portfolio'),
+    image: 'assets/imgs/projects/chat_app.png',
+    title: 'ChatApp',
+    subtitle: 'Full Stack (Flutter & Node.js)',
+    gitHubLink: 'https://github.com/OdaFra/ChatApp',
+  ),
+  ProjectUtils(
+    image: 'assets/imgs/projects/api_rest_ecommerce_nodejs.png',
+    title: 'API REST E-Commerce',
+    subtitle: 'Api Rest con Node.js',
+    gitHubLink: 'https://github.com/OdaFra/ECommerce_ApiRest_NodeJS',
+  ),
 ];
