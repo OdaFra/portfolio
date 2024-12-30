@@ -1,125 +1,125 @@
 List<Map> platformItems = [
   {
-    "icon": 'imgs/platforms/android.png',
+    "icon": 'assets/imgs/platforms/android.png',
     "title": "Android",
   },
   {
-    "icon": 'imgs/platforms/ios.png',
+    "icon": 'assets/imgs/platforms/ios.png',
     "title": "IOS",
   },
   {
-    "icon": 'imgs/platforms/web.png',
+    "icon": 'assets/imgs/platforms/web.png',
     "title": "Web",
   },
   {
-    "icon": 'imgs/platforms/desktop.png',
+    "icon": 'assets/imgs/platforms/desktop.png',
     "title": "Desktop",
   }
 ];
 
 const List<Map> programingLanguages = [
   {
-    "icon": 'imgs/languages/Dart.png',
+    "icon": 'assets/imgs/languages/Dart.png',
     "title": "Dart",
   },
   {
-    "icon": 'imgs/languages/typescript.png',
+    "icon": 'assets/imgs/languages/typescript.png',
     "title": "TypeScript",
   },
   {
-    "icon": 'imgs/languages/Js.png',
+    "icon": 'assets/imgs/languages/Js.png',
     "title": "JavaScript",
   },
   {
-    "icon": 'imgs/languages/Python.png',
+    "icon": 'assets/imgs/languages/Python.png',
     "title": "Python",
   },
 ];
 
 const List<Map> frameworkItems = [
   {
-    "icon": 'imgs/framework/Flutter.png',
+    "icon": 'assets/imgs/framework/Flutter.png',
     "title": "Flutter",
   },
   {
-    "icon": 'imgs/framework/expressjs.png',
+    "icon": 'assets/imgs/framework/expressjs.png',
     "title": "Express Js",
   },
   // {
-  //   "icon": 'imgs/framework/Django.png',
+  //   "icon": 'assets/imgs/framework/Django.png',
   //   "title": "Django",
   // },
   {
-    "icon": 'imgs/framework/fastapi.png',
+    "icon": 'assets/imgs/framework/fastapi.png',
     "title": "FastApi",
   },
 ];
 
 const List<Map> toolsItems = [
   {
-    "icon": 'imgs/tools/nodeJs.png',
+    "icon": 'assets/imgs/tools/nodeJs.png',
     "title": "Node.Js",
   },
   {
-    "icon": 'imgs/tools/npm.png',
+    "icon": 'assets/imgs/tools/npm.png',
     "title": "NPM",
   },
   {
-    "icon": 'imgs/tools/docker.png',
+    "icon": 'assets/imgs/tools/docker.png',
     "title": "Docker",
   },
   {
-    "icon": 'imgs/tools/aws.png',
+    "icon": 'assets/imgs/tools/aws.png',
     "title": "AWS",
   },
   {
-    "icon": 'imgs/tools/firebase.png',
+    "icon": 'assets/imgs/tools/firebase.png',
     "title": "Firebase",
   },
   {
-    "icon": 'imgs/tools/git.png',
+    "icon": 'assets/imgs/tools/git.png',
     "title": "Git",
   },
   {
-    "icon": 'imgs/tools/github.png',
+    "icon": 'assets/imgs/tools/github.png',
     "title": "GitHub",
   },
   {
-    "icon": 'imgs/tools/postman.png',
+    "icon": 'assets/imgs/tools/postman.png',
     "title": "Postman",
   },
   {
-    "icon": 'imgs/tools/vscode.png',
+    "icon": 'assets/imgs/tools/vscode.png',
     "title": "Vscode",
   }
 ];
 
 const List<Map> databaseItems = [
   {
-    "icon": 'imgs/database/postgresql.png',
+    "icon": 'assets/imgs/database/postgresql.png',
     "title": "PostgreSQL",
   },
   {
-    "icon": 'imgs/database/oracle.png',
+    "icon": 'assets/imgs/database/oracle.png',
     "title": "Oracle",
   },
   {
-    "icon": 'imgs/database/mongodb.png',
+    "icon": 'assets/imgs/database/mongodb.png',
     "title": "MongoDB",
   },
 ];
 
 const List<Map> osItems = [
   {
-    "icon": 'imgs/os/macos.png',
+    "icon": 'assets/imgs/os/macos.png',
     "title": "MacOS",
   },
   {
-    "icon": 'imgs/os/linux.png',
+    "icon": 'assets/imgs/os/linux.png',
     "title": "Linux",
   },
   {
-    "icon": 'imgs/os/windows.png',
+    "icon": 'assets/imgs/os/windows.png',
     "title": "Windows",
   },
 ];
