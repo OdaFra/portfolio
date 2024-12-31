@@ -87,7 +87,7 @@ class ProjectsCardWidget extends StatelessWidget {
                             );
                           },
                           child: Image.asset(
-                            'imgs/tools/github.png',
+                            'assets/imgs/tools/github.png',
                             width: 18,
                           ),
                         ),
@@ -103,7 +103,7 @@ class ProjectsCardWidget extends StatelessWidget {
                             );
                           },
                           child: Image.asset(
-                            'imgs/platforms/android.png',
+                            'assets/imgs/platforms/android.png',
                             width: 18,
                             color: itemColor,
                           ),
@@ -120,7 +120,7 @@ class ProjectsCardWidget extends StatelessWidget {
                             );
                           },
                           child: Image.asset(
-                            'imgs/platforms/ios.png',
+                            'assets/imgs/platforms/ios.png',
                             width: 18,
                             color: itemColor,
                           ),
