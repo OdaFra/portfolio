@@ -18,7 +18,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final scrollController = ScrollController();
   final GlobalKey sizedBoxKey = GlobalKey();
   final List<GlobalKey> navbarKeys = List.generate(
     5,
@@ -58,49 +57,56 @@ class _HomePageState extends State<HomePage> {
                     scrollToSection(navIndex);
                   },
                 ),
-          body: SingleChildScrollView(
-            controller: scrollController,
-            scrollDirection: Axis.vertical,
-            child: Column(
-              children: [
-                SizedBox(key: sizedBoxKey),
-                //Presentation
-                if (constraints.maxWidth >= isMobileSize)
-                  const MainDesktop()
-                else
-                  const MainMobile(),
-                //Skill
-                Container(color: CustomColor.grey5Color, height: 1.0),
-                ProfessionalSkills(
+          body: CustomScrollView(
+            slivers: [
+              SliverToBoxAdapter(child: SizedBox(key: sizedBoxKey)),
+              // Presentation
+              if (constraints.maxWidth >= isMobileSize)
+                const SliverToBoxAdapter(child: MainDesktop())
+              else
+                const SliverToBoxAdapter(child: MainMobile()),
+              SliverToBoxAdapter(
+                  child: Container(color: CustomColor.grey5Color, height: 1.0)),
+              // Skills
+              SliverToBoxAdapter(
+                child: ProfessionalSkills(
                   navbarKeys: navbarKeys,
                   screenWidth: screenWidth,
                   constraints: constraints,
                 ),
-                Container(color: CustomColor.grey5Color, height: 1.0),
-                //Exprience
-                WorkExperience(
+              ),
+              SliverToBoxAdapter(
+                  child: Container(color: CustomColor.grey5Color, height: 1.0)),
+              // Experience
+              SliverToBoxAdapter(
+                child: WorkExperience(
                   navbarKeys: navbarKeys,
                   screenWidth: screenWidth,
                   constraints: constraints,
                 ),
-                Container(color: CustomColor.grey5Color, height: 1.0),
-                // Projects
-                ProjectSection(
+              ),
+              SliverToBoxAdapter(
+                  child: Container(color: CustomColor.grey5Color, height: 1.0)),
+              // Projects
+              SliverToBoxAdapter(
+                child: ProjectSection(
                   screenWidth: screenWidth,
                   key: navbarKeys[2],
                 ),
-                Container(color: CustomColor.grey5Color, height: 1.0),
-                //About me
-                AboutMeSection(
+              ),
+              SliverToBoxAdapter(
+                  child: Container(color: CustomColor.grey5Color, height: 1.0)),
+              // About Me
+              SliverToBoxAdapter(
+                child: AboutMeSection(
                   key: navbarKeys[3],
                   screenWidth: screenWidth,
                   constraints: constraints,
                   aboutMe: aboutMeItems,
                 ),
-                //Footer
-                const FooterSection(),
-              ],
-            ),
+              ),
+              const SliverToBoxAdapter(child: FooterSection()),
+            ],
           ),
           floatingActionButton: CustomFloatActionButton(
             onPress: () => scrollBackToHome(sizedBoxKey),
