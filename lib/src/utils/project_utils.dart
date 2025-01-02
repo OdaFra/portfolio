@@ -20,14 +20,6 @@ class ProjectUtils {
 //Work Projects
 List<ProjectUtils> workProjectUtils = [
   ProjectUtils(
-    image: 'assets/imgs/projects/ueno.png',
-    title: 'Ueno Bank',
-    subtitle: 'Ueno Bank',
-    androidLink:
-        'https://play.google.com/store/apps/details?id=py.com.elcomercio.retailbanking&hl=es_419',
-    iosLink: 'https://apps.apple.com/py/app/ueno/id1592509395',
-  ),
-  ProjectUtils(
     image: 'assets/imgs/projects/tm.png',
     title: 'Billetera Tigo Money',
     subtitle: 'Tigo Money',
@@ -35,6 +27,14 @@ List<ProjectUtils> workProjectUtils = [
         'https://play.google.com/store/apps/details?id=com.juvo.tigomoney&hl=es_419',
     iosLink:
         'https://apps.apple.com/sv/app/billetera-tigo-money-paraguay/id1589504689',
+  ),
+  ProjectUtils(
+    image: 'assets/imgs/projects/ueno.png',
+    title: 'Ueno Bank',
+    subtitle: 'Ueno Bank',
+    androidLink:
+        'https://play.google.com/store/apps/details?id=py.com.elcomercio.retailbanking&hl=es_419',
+    iosLink: 'https://apps.apple.com/py/app/ueno/id1592509395',
   ),
 ];
 
