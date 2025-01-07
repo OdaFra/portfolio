@@ -16,23 +16,12 @@ class MainMobile extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: (screenHeight * 0.15) / 2),
-          Container(
-            clipBehavior: Clip.antiAlias,
+          const ProfileImage(
+            imagePath: 'assets/imgs/perfil/perfilgithub.jpeg',
             height: 250,
             width: 180,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 2,
-                    blurRadius: 4,
-                    offset: const Offset(4, 4),
-                  ),
-                ]),
-            child: Image.asset(
-              'assets/imgs/perfil/perfilgithub.jpeg',
-            ),
+            blurRadius: 4,
+            spreadRadius: 2,
           ),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 350),

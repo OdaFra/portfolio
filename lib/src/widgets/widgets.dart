@@ -10,3 +10,4 @@ export 'project_card.dart';
 export 'project_section.dart';
 export 'site_logo.dart';
 export 'work_experience.dart';
+export 'profile_image.dart';

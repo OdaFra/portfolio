@@ -21,23 +21,12 @@ class MainDesktop extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                clipBehavior: Clip.antiAlias,
+              const ProfileImage(
+                imagePath: 'assets/imgs/perfil/perfilgithub.jpeg',
                 height: 270,
                 width: 200,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 6,
-                        offset: const Offset(4, 4),
-                      ),
-                    ]),
-                child: Image.asset(
-                  'assets/imgs/perfil/perfilgithub.jpeg',
-                ),
+                blurRadius: 6,
+                spreadRadius: 2,
               ),
               const SizedBox(width: 30),
               ConstrainedBox(
