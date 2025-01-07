@@ -12,7 +12,7 @@ class ProfileImage extends StatelessWidget {
     required this.imagePath,
     required this.height,
     required this.width,
-    this.blurRadius = 6.0, 
+    this.blurRadius = 6.0,
     this.spreadRadius = 2.0,
   });
 
@@ -36,12 +36,13 @@ class ProfileImage extends StatelessWidget {
       child: Image.asset(
         imagePath,
         fit: BoxFit.cover,
-        frameBuilder: (BuildContext context, Widget child, int? frame, bool wasSynchronouslyLoaded) {
+        frameBuilder: (BuildContext context, Widget child, int? frame,
+            bool wasSynchronouslyLoaded) {
           if (wasSynchronouslyLoaded) {
             return child;
           }
           return AnimatedSwitcher(
-            duration: const Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 600),
             child: frame != null
                 ? child
                 : const Center(
