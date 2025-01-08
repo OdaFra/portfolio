@@ -42,7 +42,7 @@ class ProfileImage extends StatelessWidget {
             return child;
           }
           return AnimatedSwitcher(
-            duration: const Duration(milliseconds: 600),
+            duration: const Duration(milliseconds: 750),
             child: frame != null
                 ? child
                 : const Center(
