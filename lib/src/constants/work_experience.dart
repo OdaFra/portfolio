@@ -65,7 +65,7 @@ List<Map> workExperienceItems = [
     "year": "Abr. 2022 - Abr. 2023",
     "ubication": 'Asunción - Paraguay',
     "description":
-        'Desarrolé aplicaciones móviles con Flutter/ Dart para el sector financiendo, donde integré servicios Api Rest, base de datos, reporte y seguimiento de tareas e implemente principios de arquitectura limpia para garantizar un código eficiente, modular y fácil de mantener.',
+        'Desarrolé aplicaciones móviles con Flutter/ Dart para el sector Financiero, donde integré servicios Api Rest, base de datos, reporte y seguimiento de tareas e implemente principios de arquitectura limpia para garantizar un código eficiente, modular y fácil de mantener.',
     'skill': {
       "dart": 'assets/imgs/languages/Dart.png',
       "flutter": 'assets/imgs/framework/Flutter.png',
