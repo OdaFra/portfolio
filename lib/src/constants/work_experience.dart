@@ -1,7 +1,7 @@
 List<Map> workExperienceItems = [
   {
     "company": 'Millicom (Tigo)',
-    "position": 'Mobile Software Engineer | Flutter',
+    "position": 'Sr. Mobile Software Engineer | Flutter',
     "year": "Abr. 2024 - Actualidad",
     "ubication": 'En remoto - Paraguay',
     "description":
