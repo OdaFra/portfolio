@@ -41,6 +41,12 @@ List<ProjectUtils> workProjectUtils = [
 //Hobby Projects
 List<ProjectUtils> hobbyProjectUtils = [
   ProjectUtils(
+    image: 'assets/imgs/projects/blogApp.png',
+    title: 'Blog App',
+    subtitle: 'Aplicación Flutter con Arquitectura Limpia',
+    gitHubLink: 'https://github.com/OdaFra/blogapp',
+  ),
+  ProjectUtils(
     image: 'assets/imgs/projects/portfolio_web.png',
     title: 'Portfolio Web',
     subtitle: 'Flutter Web Portfolio',
