@@ -1,23 +1,29 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
-
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:web_portfolio/src/themes/colors.dart';
+import '../themes/colors.dart';
 
 class CustomFloatActionButton extends StatelessWidget {
-  CustomFloatActionButton({super.key, required this.onPress});
-  void Function()? onPress;
-
+  const CustomFloatActionButton({
+    super.key,
+    this.onPress,
+  });
+  final VoidCallback? onPress;
+  
   @override
   Widget build(BuildContext context) {
-    return SpeedDial(
-      onPress: onPress,
-      icon: Icons.keyboard_control_key,
-      animatedIconTheme: const IconThemeData(size: 25.0),
-      backgroundColor: CustomColor.yellowPrimary,
-      visible: true,
-      curve: Curves.bounceInOut,
+    return FloatingActionButton(
+      onPressed: onPress,
+      backgroundColor: CustomColor.accentPrimary.withOpacity(0.9),
+      elevation: 10,
+      highlightElevation: 20,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(color: CustomColor.accentSecondary.withOpacity(0.3)),
+      ),
+      child: const Icon(
+        Icons.keyboard_arrow_up,
+        color: Colors.white,
+        size: 30,
+      ),
     );
   }
 }

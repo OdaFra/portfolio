@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import '../themes/themes.dart';
+import '../themes/colors.dart';
 import '../utils/project_utils.dart';
 import 'widgets.dart';
 
@@ -11,67 +11,113 @@ class ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Work Project
+    bool isDesktop = screenWidth >= 992;
+    bool isMobile = screenWidth < 600;
+    double paddingX = isDesktop ? 100 : 20;
+
     return Container(
       width: screenWidth,
-      padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+      padding: EdgeInsets.symmetric(horizontal: paddingX, vertical: 60),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //Work Project title
-          const AutoSizeText(
-            'Work projects',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
+          _buildSectionHeader(context, "Proyectos", isMobile),
+          const SizedBox(height: 40),
+          Text(
+            'Proyectos de trabajo',
+            style: GoogleFonts.outfit(
+              fontSize: isMobile ? 20 : 24,
+              fontWeight: FontWeight.w600,
+              color: CustomColor.textPrimary,
             ),
           ),
-          const SizedBox(
-            height: 40,
+          const SizedBox(height: 24),
+          Wrap(
+            spacing: isMobile ? 16 : 25,
+            runSpacing: isMobile ? 16 : 25,
+            children: workProjectUtils
+                .map((project) => SizedBox(
+                      width: isMobile ? double.infinity : 320,
+                      child: ProjectsCardWidget(project: project),
+                    ))
+                .toList(),
           ),
-          ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 800),
-            child: Wrap(
-              spacing: 25,
-              runSpacing: 25,
-              children: [
-                for (int i = 0; i < workProjectUtils.length; i++)
-                  ProjectsCardWidget(
-                    project: workProjectUtils[i],
-                  ),
-              ],
+          const SizedBox(height: 40),
+          Text(
+            'Proyectos personales',
+            style: GoogleFonts.outfit(
+              fontSize: isMobile ? 20 : 24,
+              fontWeight: FontWeight.w600,
+              color: CustomColor.textPrimary,
             ),
           ),
-          const SizedBox(
-            height: 40,
-          ),
-          //Hobby Project
-          const AutoSizeText(
-            'Hobby projects',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
-            ),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 850),
-            child: Wrap(
-              spacing: 25,
-              runSpacing: 25,
-              children: [
-                for (int i = 0; i < hobbyProjectUtils.length; i++)
-                  ProjectsCardWidget(
-                    project: hobbyProjectUtils[i],
-                  ),
-              ],
-            ),
+          const SizedBox(height: 24),
+          Wrap(
+            spacing: isMobile ? 16 : 25,
+            runSpacing: isMobile ? 16 : 25,
+            children: hobbyProjectUtils
+                .map((project) => SizedBox(
+                      width: isMobile ? double.infinity : 320,
+                      child: ProjectsCardWidget(project: project),
+                    ))
+                .toList(),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildSectionHeader(
+      BuildContext context, String title, bool isMobile) {
+    if (isMobile) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: GoogleFonts.outfit(
+              fontSize: 28,
+              fontWeight: FontWeight.w700,
+              color: CustomColor.textPrimary,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            height: 2,
+            width: 120,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  CustomColor.accentPrimary.withOpacity(0.5),
+                  Colors.transparent
+                ],
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+    return Row(
+      children: [
+        Text(
+          title,
+          style: Theme.of(context).textTheme.headlineLarge,
+        ),
+        const SizedBox(width: 20),
+        Expanded(
+          child: Container(
+            height: 1,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  CustomColor.accentPrimary.withOpacity(0.5),
+                  Colors.transparent
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
