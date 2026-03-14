@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey sizedBoxKey = GlobalKey();
   final List<GlobalKey> navbarKeys = List.generate(
-    5,
+    6,
     (index) => GlobalKey(),
   );
   int _currentNavIndex = 0;
@@ -131,6 +131,7 @@ class _HomePageState extends State<HomePage> {
                     // Featured Project (Secreto / Próximamente)
                     SliverToBoxAdapter(
                       child: FeaturedProjectSectionV2(
+                        key: navbarKeys[3],
                         screenWidth: screenWidth,
                         constraints: constraints,
                       ),
@@ -140,14 +141,14 @@ class _HomePageState extends State<HomePage> {
                     SliverToBoxAdapter(
                       child: ProjectSection(
                         screenWidth: screenWidth,
-                        key: navbarKeys[3],
+                        key: navbarKeys[4],
                       ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 100)),
                     // 5. About Me
                     SliverToBoxAdapter(
                       child: AboutMeSection(
-                        key: navbarKeys[4],
+                        key: navbarKeys[5],
                         screenWidth: screenWidth,
                         constraints: constraints,
                         aboutMe: aboutMeItems,
