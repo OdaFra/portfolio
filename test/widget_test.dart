@@ -1,30 +1,65 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:web_portfolio/main.dart';
+import 'package:redisenho_portfolio/src/widgets/featured_project.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+  testWidgets('Finanzi carousel renders and advances', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: LayoutBuilder(
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                child: FeaturedProjectSection(
+                  screenWidth: constraints.maxWidth,
+                  constraints: constraints,
+                  preloadCarousel: false,
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+    );
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Finanzi'), findsOneWidget);
+    expect(find.text('EN PRODUCCIÓN'), findsOneWidget);
+    expect(find.text('1 / 6'), findsOneWidget);
+    expect(find.text('DESCARGAR EN'), findsOneWidget);
+    expect(find.text('Google Play'), findsOneWidget);
+    expect(find.text('Flutter'), findsNothing);
+    expect(find.text('Dart'), findsNothing);
+
+    await tester.drag(find.byType(PageView), const Offset(-500, 0));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    expect(find.text('2 / 6'), findsOneWidget);
+  });
+
+  testWidgets('Finanzi shows its carousel preload state', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: LayoutBuilder(
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                child: FeaturedProjectSection(
+                  screenWidth: constraints.maxWidth,
+                  constraints: constraints,
+                ),
+              );
+            },
+          ),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.text('Preparando carrusel Finanzi'), findsOneWidget);
+    expect(find.textContaining('de 6 imágenes'), findsOneWidget);
+    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+
+    await tester.pump(const Duration(milliseconds: 800));
   });
 }

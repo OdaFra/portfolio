@@ -3,7 +3,6 @@ export 'custom_button_contact.dart';
 export 'custom_skills_items.dart';
 export 'custom_work_experience.dart';
 export 'featured_project.dart';
-export 'featured_project_v2.dart';
 export 'floating_action_button.dart';
 export 'footer_section.dart';
 export 'presentation_am.dart';
