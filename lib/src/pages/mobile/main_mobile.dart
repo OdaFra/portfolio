@@ -9,7 +9,12 @@ import 'package:redisenho_portfolio/src/constants/constants.dart';
 import 'package:redisenho_portfolio/src/themes/colors.dart';
 
 class MainMobile extends StatelessWidget {
-  const MainMobile({super.key});
+  const MainMobile({
+    super.key,
+    required this.onProjectsTap,
+  });
+
+  final VoidCallback onProjectsTap;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +60,8 @@ class MainMobile extends StatelessWidget {
                   width: isTiny ? 130 : 180,
                   height: isTiny ? 130 : 180,
                   fit: BoxFit.cover,
-                  frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+                  frameBuilder:
+                      (context, child, frame, wasSynchronouslyLoaded) {
                     if (wasSynchronouslyLoaded) {
                       return child;
                     }
@@ -149,9 +155,7 @@ class MainMobile extends StatelessWidget {
 
           // CTA Button
           ElevatedButton(
-            onPressed: () {
-              js.context.callMethod('open', ['https://github.com/OdaFra']);
-            },
+            onPressed: onProjectsTap,
             style: ElevatedButton.styleFrom(
               backgroundColor: CustomColor.accentPrimary,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),

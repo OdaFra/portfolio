@@ -9,7 +9,12 @@ import 'package:redisenho_portfolio/src/constants/constants.dart';
 import 'package:redisenho_portfolio/src/themes/colors.dart';
 
 class MainDesktop extends StatelessWidget {
-  const MainDesktop({super.key});
+  const MainDesktop({
+    super.key,
+    required this.onProjectsTap,
+  });
+
+  final VoidCallback onProjectsTap;
 
   @override
   Widget build(BuildContext context) {
@@ -99,10 +104,7 @@ class MainDesktop extends StatelessWidget {
                 Row(
                   children: [
                     ElevatedButton(
-                      onPressed: () {
-                        js.context
-                            .callMethod('open', ['https://github.com/OdaFra']);
-                      },
+                      onPressed: onProjectsTap,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: CustomColor.accentPrimary,
                         padding: const EdgeInsets.symmetric(

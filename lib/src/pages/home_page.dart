@@ -105,8 +105,12 @@ class _HomePageState extends State<HomePage> {
                       child: SizedBox(
                         key: navbarKeys[0],
                         child: isDesktop
-                            ? const MainDesktop()
-                            : const MainMobile(),
+                            ? MainDesktop(
+                                onProjectsTap: () => scrollToSection(3),
+                              )
+                            : MainMobile(
+                                onProjectsTap: () => scrollToSection(3),
+                              ),
                       ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 100)),
@@ -128,16 +132,16 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 100)),
-                    // Featured Project (Secreto / Próximamente)
+                    // 4. Featured Project
                     SliverToBoxAdapter(
-                      child: FeaturedProjectSectionV2(
+                      child: FeaturedProjectSection(
                         key: navbarKeys[3],
                         screenWidth: screenWidth,
                         constraints: constraints,
                       ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 100)),
-                    // 4. Projects
+                    // 5. Projects
                     SliverToBoxAdapter(
                       child: ProjectSection(
                         screenWidth: screenWidth,
@@ -145,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SliverToBoxAdapter(child: SizedBox(height: 100)),
-                    // 5. About Me
+                    // 6. About Me
                     SliverToBoxAdapter(
                       child: AboutMeSection(
                         key: navbarKeys[5],
